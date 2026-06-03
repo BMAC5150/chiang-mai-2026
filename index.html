@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#5D4E8C">
+<title>Pre-departure Itinerary · Chiang Mai 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,30..100;1,9..144,400..600,30..100&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --violet:#8B7EC8; --violet-deep:#5D4E8C; --aubergine:#3E3460;
+    --lav-bg:#F4F1FA; --lav-card:#FFFFFF; --lav-tint:#EFEAFA;
+    --gold:#C9A24B; --gold-soft:#E6D2A0; --ink:#2E2A3A; --muted:#8A7FA8;
+    --line:#DAD2EC; --jade:#5B8C6E; --jade-soft:#DCEBE1;
+    --shadow:0 10px 30px -12px rgba(62,52,96,.35);
+    --shadow-sm:0 4px 14px -6px rgba(62,52,96,.30);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{
+    font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--ink);background:var(--lav-bg);
+    background-image:
+      radial-gradient(120% 60% at 85% -5%, rgba(139,126,200,.30), transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, rgba(201,162,75,.10), transparent 55%),
+      radial-gradient(80% 60% at 50% 110%, rgba(93,78,140,.18), transparent 60%);
+    background-attachment:fixed;line-height:1.5;-webkit-font-smoothing:antialiased;
+    padding:0 0 56px;position:relative;
+    font-feature-settings:"kern","liga","calt","ss01";
+    text-rendering:optimizeLegibility;
+  }
+  /* fine grain — settles the palette, hides banding */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.42;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .24  0 0 0 0 .20  0 0 0 0 .38  0 0 0 .06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .wrap, header, section, nav, footer{position:relative;z-index:2;}
+  .wrap{max-width:460px;margin:0 auto;padding:0 20px;}
+  section{scroll-margin-top:64px;}
+
+  /* ---------- Header ---------- */
+  header{padding:46px 0 18px;text-align:center;position:relative;}
+  /* Faint orchid silhouette behind the title — sets atmosphere */
+  header::before{
+    content:"";position:absolute;left:50%;top:18px;width:280px;height:280px;transform:translateX(-50%);
+    pointer-events:none;opacity:.13;z-index:-1;
+    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%235D4E8C' stroke-width='.6'><g transform='translate(100 100)'><ellipse rx='42' ry='14' transform='rotate(20)'/><ellipse rx='42' ry='14' transform='rotate(80)'/><ellipse rx='42' ry='14' transform='rotate(140)'/><ellipse rx='42' ry='14' transform='rotate(200)'/><ellipse rx='42' ry='14' transform='rotate(260)'/><ellipse rx='42' ry='14' transform='rotate(320)'/><circle r='10' fill='%23C9A24B' fill-opacity='.4' stroke='none'/></g></svg>") center/contain no-repeat;
+  }
+  .kicker{font-size:10.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--violet-deep);font-weight:600;
+    display:inline-flex;align-items:center;gap:12px;padding-left:.42em;font-feature-settings:"smcp","c2sc","ss01";}
+  .kicker::before,.kicker::after{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--gold) 50%,transparent);display:inline-block;}
+  h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:44px;line-height:1.0;letter-spacing:-.022em;color:var(--aubergine);margin:16px 0 8px;
+    font-variation-settings:"opsz" 144,"SOFT" 60;font-feature-settings:"ss01","ss02","liga","dlig","kern";}
+  h1 em{font-style:italic;color:var(--violet-deep);font-variation-settings:"opsz" 144,"SOFT" 100;letter-spacing:-.012em;}
+  .subhead{color:var(--muted);font-size:14px;font-weight:500;font-style:italic;font-family:'Fraunces',serif;font-variation-settings:"opsz" 14,"SOFT" 80;}
+  .travellers{margin-top:16px;font-size:13px;color:var(--violet-deep);font-weight:600;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;letter-spacing:.04em;}
+  .travellers span{color:var(--gold);opacity:.7;font-size:9px;transform:translateY(-1px);}
+  .status{margin:20px auto 0;display:inline-flex;align-items:center;gap:8px;background:rgba(201,162,75,.14);border:1px solid var(--gold-soft);
+    color:#8a6d24;font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:7px 14px;border-radius:100px;text-transform:uppercase;}
+  .status .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.25);}
+
+  /* ---------- Sticky nav ---------- */
+  .nav{position:sticky;top:0;z-index:20;margin:18px -20px 0;padding:11px 20px;
+    background:rgba(244,241,250,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(218,210,236,.7);display:flex;gap:9px;justify-content:center;}
+  .nav a{font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--violet-deep);text-decoration:none;
+    padding:8px 16px;border-radius:100px;background:#fff;border:1px solid var(--line);transition:.2s cubic-bezier(.2,.7,.2,1);box-shadow:0 1px 0 rgba(255,255,255,.5) inset;}
+  .nav a:hover{border-color:var(--gold-soft);color:var(--aubergine);}
+  .nav a:active{transform:scale(.95);background:var(--lav-tint);}
+
+  /* ---------- Section heads ---------- */
+  .s-head{display:flex;align-items:center;gap:11px;margin-bottom:5px;}
+  .s-head .ico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;flex:none;background:var(--aubergine);color:#fff;box-shadow:var(--shadow-sm),inset 0 0 0 1px rgba(201,162,75,.2);position:relative;}
+  .s-head .ico::after{content:"";position:absolute;inset:3px;border-radius:8px;border:1px solid rgba(255,255,255,.06);pointer-events:none;}
+  .s-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;color:var(--aubergine);line-height:1;letter-spacing:-.015em;font-variation-settings:"opsz" 96,"SOFT" 50;font-feature-settings:"ss01","liga";}
+  .s-head .sub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--violet-deep);font-weight:600;margin-top:5px;}
+  .crumb{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:0 0 16px 49px;display:flex;align-items:center;gap:9px;}
+  .crumb::before{content:"";width:14px;height:1px;background:linear-gradient(90deg,transparent,var(--gold));}
+  .crumb::after{content:"❉";font-size:8px;color:var(--gold-soft);letter-spacing:0;}
+  .block{margin-top:34px;animation:rise .7s cubic-bezier(.2,.7,.2,1) both;}
+
+  /* ---------- Journey ---------- */
+  .journey{margin-top:22px;}
+  .j-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:18px;padding:0 2px;}
+  .j-title{display:flex;align-items:center;gap:11px;}
+  .j-title .ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--violet-deep);color:#fff;flex:none;box-shadow:var(--shadow-sm);}
+  .j-title h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px;color:var(--aubergine);line-height:1;letter-spacing:-.015em;font-variation-settings:"opsz" 96,"SOFT" 60;font-style:italic;}
+  .j-title .date{font-size:12px;color:var(--muted);font-weight:600;margin-top:4px;font-variant-numeric:tabular-nums;}
+  .j-total{text-align:right;font-size:10px;color:var(--muted);font-weight:600;line-height:1.3;letter-spacing:.14em;text-transform:uppercase;}
+  .j-total b{display:block;font-size:16px;color:var(--violet-deep);font-family:'Fraunces',serif;font-variant-numeric:tabular-nums;letter-spacing:-.01em;text-transform:none;margin-top:2px;font-variation-settings:"opsz" 72;}
+
+  .timeline{position:relative;padding-left:34px;}
+  .timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--violet),var(--violet-deep));border-radius:2px;opacity:.55;}
+  .node{position:relative;}
+  .node::before{content:"";position:absolute;left:-34px;top:3px;width:20px;height:20px;border-radius:50%;background:var(--lav-bg);border:2px solid var(--violet-deep);}
+  .node.endpoint::before{background:var(--aubergine);border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.28);}
+  .node.layover::before{width:14px;height:14px;left:-31px;top:6px;border-style:dashed;border-color:var(--violet);background:#fff;}
+
+  .station{display:flex;align-items:baseline;gap:12px;padding:0 0 4px;}
+  .station .code{font-family:'Fraunces',serif;font-weight:600;font-size:32px;color:var(--aubergine);letter-spacing:-.025em;line-height:1;font-variation-settings:"opsz" 144,"SOFT" 40;font-feature-settings:"ss01";}
+  .station .meta{flex:1;}
+  .station .city{font-size:13px;font-weight:600;color:var(--violet-deep);}
+  .station .term{font-size:11px;color:var(--muted);font-weight:500;}
+  .station .time{text-align:right;}
+  .station .time b{font-family:'Fraunces',serif;font-size:20px;color:var(--aubergine);font-weight:600;font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum","lnum";}
+  .station .time small{display:block;font-size:10.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+  .station .tag{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-soft);border-radius:5px;padding:2px 6px;align-self:center;}
+
+  .leg{position:relative;margin:14px 0;background:var(--lav-card);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(218,210,236,.7);}
+  .leg::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--gold),var(--gold-soft));}
+  .leg-top{display:flex;align-items:center;justify-content:space-between;padding:13px 16px 11px 18px;background:var(--lav-tint);border-bottom:1px dashed var(--line);}
+  .leg-flt{display:flex;align-items:center;gap:9px;}
+  .leg-flt .no{font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--violet-deep);letter-spacing:.04em;font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum","lnum","ss01";}
+  .leg-flt .craft{font-size:11px;color:var(--muted);font-weight:600;}
+  .cabin{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--violet-deep);color:#fff;padding:4px 9px;border-radius:6px;}
+  .cabin.tbc{background:transparent;color:var(--muted);border:1px dashed var(--line);}
+  .leg-top::after,.leg-top::before{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--lav-bg);bottom:-7px;z-index:2;}
+  .leg-top::before{left:-7px;}.leg-top::after{right:-7px;}
+  .leg-body{display:flex;align-items:center;gap:10px;padding:16px 18px;}
+  .ep{flex:1;min-width:0;}.ep.to{text-align:right;}
+  .ep .c{font-family:'Fraunces',serif;font-weight:600;font-size:28px;color:var(--aubergine);line-height:1;letter-spacing:-.028em;font-variation-settings:"opsz" 144,"SOFT" 40;}
+  .ep .t{font-size:15px;font-weight:700;color:var(--violet-deep);margin-top:4px;font-variant-numeric:tabular-nums;font-feature-settings:"tnum","lnum";letter-spacing:-.01em;}
+  .ep .d{font-size:10.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+  .leg-mid{display:flex;flex-direction:column;align-items:center;color:var(--violet);flex:none;width:74px;}
+  .leg-mid .dur{font-size:10.5px;font-weight:700;color:var(--violet-deep);margin-bottom:4px;font-variant-numeric:tabular-nums;letter-spacing:.02em;}
+  .leg-mid .track{display:flex;align-items:center;width:100%;color:var(--gold);}
+  .leg-mid .track .ln{flex:1;height:1.5px;background:repeating-linear-gradient(90deg,var(--gold) 0 4px,transparent 4px 8px);}
+  .leg-mid svg{flex:none;}
+  .leg-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:0 18px 14px;font-size:11px;color:var(--muted);font-weight:600;}
+  .leg-foot .f{display:inline-flex;align-items:center;gap:5px;}
+  .leg-foot .f svg{color:var(--violet);flex:none;}
+  .leg-foot .op{color:var(--gold);}
+
+  .layover .lay-card{background:rgba(239,234,250,.7);border:1px dashed var(--violet);border-radius:13px;padding:12px 15px;}
+  .lay-head{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .lay-head .ttl{font-size:12px;font-weight:700;color:var(--violet-deep);display:flex;align-items:center;gap:7px;}
+  .lay-head .gap{font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--aubergine);font-variant-numeric:tabular-nums;font-variation-settings:"opsz" 36;letter-spacing:-.01em;}
+  .lay-times{font-size:11px;color:var(--muted);font-weight:600;margin-top:5px;font-variant-numeric:tabular-nums;}
+  .lay-note{margin-top:9px;font-size:11px;line-height:1.45;color:var(--ink);display:flex;gap:7px;align-items:flex-start;}
+  .lay-note svg{flex:none;margin-top:1px;}
+  .lay-note.warn{color:#9a3a3a;}.lay-note.warn svg{color:#c25b5b;}
+  .lay-note.info svg{color:var(--gold);}
+
+  .gtk{margin-top:20px;background:var(--aubergine);color:#efeafa;border-radius:18px;padding:24px 22px;box-shadow:var(--shadow),inset 0 0 0 1px rgba(201,162,75,.18);position:relative;overflow:hidden;}
+  .gtk::before{content:"";position:absolute;left:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,.18),transparent 70%);pointer-events:none;}
+  .gtk h4{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:#fff;display:flex;align-items:center;gap:10px;margin-bottom:16px;letter-spacing:-.01em;font-variation-settings:"opsz" 48,"SOFT" 50;font-style:italic;}
+  .gtk h4 .d{width:7px;height:7px;border-radius:50%;background:var(--gold);}
+  .gtk ul{list-style:none;display:flex;flex-direction:column;gap:13px;}
+  .gtk li{display:flex;gap:11px;font-size:12.5px;line-height:1.5;color:#d9cfee;}
+  .gtk li b{color:#fff;font-weight:600;}
+  .gtk li .ic{flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:rgba(201,162,75,.18);color:var(--gold-soft);margin-top:1px;}
+
+  /* ---------- Wedding ---------- */
+  .w-hero{position:relative;margin-top:20px;border-radius:22px;overflow:hidden;padding:34px 22px 30px;text-align:center;color:#fff;
+    background:linear-gradient(155deg,#4a3e74 0%,var(--aubergine) 55%,#2c2547 100%);box-shadow:var(--shadow),inset 0 0 0 1px rgba(201,162,75,.18);}
+  .w-hero::before{content:"";position:absolute;inset:0;opacity:.55;
+    background:radial-gradient(60% 50% at 80% 0%,rgba(201,162,75,.38),transparent 60%),radial-gradient(50% 40% at 10% 100%,rgba(139,126,200,.55),transparent 60%);}
+  /* Floating orchid silhouette */
+  .w-hero::after{content:"";position:absolute;right:-44px;bottom:-48px;width:220px;height:220px;opacity:.16;pointer-events:none;
+    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23E6D2A0' stroke-width='.7'><g transform='translate(100 100)'><ellipse rx='48' ry='16' transform='rotate(15)'/><ellipse rx='48' ry='16' transform='rotate(75)'/><ellipse rx='48' ry='16' transform='rotate(135)'/><ellipse rx='48' ry='16' transform='rotate(195)'/><ellipse rx='48' ry='16' transform='rotate(255)'/><ellipse rx='48' ry='16' transform='rotate(315)'/><circle r='12' fill='%23C9A24B' fill-opacity='.5' stroke='none'/></g></svg>") center/contain no-repeat;}
+  .w-hero > *{position:relative;z-index:1;}
+  .w-eyebrow{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;font-feature-settings:"smcp","ss01";}
+  .w-names{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:46px;line-height:1.02;margin:14px 0 6px;color:#fff;letter-spacing:-.018em;
+    font-variation-settings:"opsz" 144,"SOFT" 100;font-feature-settings:"ss01","dlig","liga","swsh";}
+  .w-amp{color:var(--gold-soft);font-style:italic;font-weight:400;font-variation-settings:"opsz" 144,"SOFT" 100;padding:0 .05em;}
+  .w-rule{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px 0 12px;color:var(--gold-soft);}
+  .w-rule .l{width:40px;height:1px;background:var(--gold-soft);opacity:.6;}
+  .w-rule svg{flex:none;}
+  .w-date{font-size:14px;font-weight:600;letter-spacing:.02em;color:#efeafa;font-variant-numeric:tabular-nums;}
+  .w-date b{font-family:'Fraunces',serif;color:#fff;font-weight:600;font-variation-settings:"opsz" 24,"SOFT" 80;}
+
+  .w-details{margin-top:14px;display:flex;flex-direction:column;gap:11px;}
+  .w-row{background:var(--lav-card);border:1px solid rgba(218,210,236,.7);border-radius:14px;box-shadow:var(--shadow-sm);
+    padding:14px 15px;display:flex;gap:12px;align-items:flex-start;}
+  .w-row .ic{width:32px;height:32px;border-radius:9px;flex:none;display:grid;place-items:center;background:var(--lav-tint);color:var(--violet-deep);}
+  .w-row .lab{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:3px;}
+  .w-row .val{font-size:14px;font-weight:600;color:var(--ink);line-height:1.35;}
+  .w-row .val .nm{font-family:'Fraunces',serif;font-size:16px;color:var(--aubergine);font-variation-settings:"opsz" 36,"SOFT" 60;letter-spacing:-.005em;font-variant-numeric:tabular-nums;}
+  .w-row .sm{font-size:11.5px;color:var(--muted);font-weight:500;margin-top:3px;line-height:1.45;}
+  .maps-btn{display:inline-flex;align-items:center;gap:6px;margin-top:9px;font-size:12px;font-weight:700;color:#fff;
+    background:var(--violet-deep);text-decoration:none;padding:8px 14px;border-radius:100px;box-shadow:var(--shadow-sm);}
+  .maps-btn:active{transform:scale(.97);}
+
+  .w-note{margin-top:13px;background:rgba(201,162,75,.12);border:1px solid var(--gold-soft);border-radius:14px;padding:14px 15px;
+    display:flex;gap:11px;align-items:flex-start;}
+  .w-note svg{flex:none;color:var(--gold);margin-top:1px;}
+  .w-note p{font-size:12px;line-height:1.5;color:#7a5f1f;}
+  .w-note b{color:#5f4a14;}
+
+  /* ---------- Health ---------- */
+  .reassure{background:var(--jade-soft);border:1px solid #BFD9C8;border-radius:14px;padding:15px 16px;margin-bottom:14px;display:flex;gap:12px;align-items:flex-start;}
+  .reassure .chk{width:30px;height:30px;border-radius:9px;background:var(--jade);color:#fff;display:grid;place-items:center;flex:none;}
+  .reassure b{font-family:'Fraunces',serif;font-size:17px;color:#2f5340;font-weight:600;display:block;margin-bottom:3px;font-variation-settings:"opsz" 36,"SOFT" 70;font-style:italic;letter-spacing:-.01em;}
+  .reassure p{font-size:12px;color:#3f5e4c;line-height:1.45;}
+  .card{background:var(--lav-card);border:1px solid rgba(218,210,236,.7);border-radius:16px;box-shadow:var(--shadow-sm);padding:16px 17px;margin-bottom:14px;}
+  .card .lbl{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--violet-deep);display:flex;align-items:center;gap:8px;margin-bottom:11px;}
+  .card .lbl svg{color:var(--gold);flex:none;}
+  .vx{display:flex;flex-direction:column;gap:9px;}
+  .vrow{display:flex;align-items:center;gap:10px;}
+  .vrow .pip{width:8px;height:8px;border-radius:50%;flex:none;}
+  .pip.core{background:var(--violet-deep);}
+  .pip.opt{background:transparent;border:1.5px solid var(--gold);}
+  .vrow .nm{font-size:13px;font-weight:600;color:var(--ink);}
+  .vrow .nt{font-size:11.5px;color:var(--muted);}
+  .vlegend{display:flex;gap:16px;margin-top:13px;padding-top:12px;border-top:1px dashed var(--line);font-size:10.5px;color:var(--muted);font-weight:600;}
+  .vlegend span{display:inline-flex;align-items:center;gap:6px;}
+  .callout{border-radius:14px;padding:14px 15px;margin-bottom:14px;display:flex;gap:11px;align-items:flex-start;}
+  .callout svg{flex:none;margin-top:1px;}
+  .callout .ttl{font-weight:700;font-size:12.5px;margin-bottom:3px;}
+  .callout p{font-size:12px;line-height:1.5;}
+  .callout.rain{background:var(--lav-tint);border:1px solid var(--line);}
+  .callout.rain svg{color:var(--violet-deep);}.callout.rain .ttl{color:var(--violet-deep);}.callout.rain p{color:var(--ink);}
+  .callout.malaria{background:#fff;border:1px solid rgba(218,210,236,.7);}
+  .callout.malaria svg{color:var(--gold);}.callout.malaria .ttl{color:var(--aubergine);}.callout.malaria p{color:var(--muted);}
+  .action{background:var(--aubergine);color:#efeafa;border-radius:16px;padding:17px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:flex-start;}
+  .action .ic{width:30px;height:30px;border-radius:9px;background:rgba(201,162,75,.2);color:var(--gold-soft);display:grid;place-items:center;flex:none;}
+  .action b{font-family:'Fraunces',serif;color:#fff;font-size:16px;font-weight:600;display:block;margin-bottom:3px;font-variation-settings:"opsz" 36,"SOFT" 60;font-style:italic;letter-spacing:-.01em;}
+  .action p{font-size:12px;color:#d9cfee;line-height:1.5;}
+  .action .lead{color:var(--gold-soft);font-weight:600;}
+  .disc{font-size:10.5px;color:var(--muted);line-height:1.55;margin-top:16px;text-align:center;padding:0 6px;}
+  .disc b{color:var(--violet-deep);font-weight:600;}
+
+  footer{text-align:center;margin-top:44px;font-size:11px;color:var(--muted);line-height:1.7;position:relative;padding-top:28px;}
+  footer::after{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:140px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-soft) 25%,var(--gold-soft) 75%,transparent);opacity:.55;}
+  footer::before{content:"❉";position:absolute;top:0;left:50%;transform:translateX(-50%);color:var(--gold);font-size:13px;opacity:.85;background:var(--lav-bg);padding:0 8px;line-height:1.2;z-index:1;}
+  footer .b{font-family:'Fraunces',serif;color:var(--violet-deep);font-weight:600;font-style:italic;font-size:13px;font-variation-settings:"opsz" 24,"SOFT" 80;letter-spacing:-.005em;display:block;margin-bottom:4px;}
+
+  @keyframes rise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @media (max-width:360px){h1{font-size:36px;}.ep .c{font-size:22px;}.leg-mid{width:62px;}.w-names{font-size:34px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Land of Smiles</div>
+    <h1>Chiang Mai<br><em>2026</em></h1>
+    <div class="subhead">Pre-departure itinerary</div>
+    <div class="travellers">BMAC <span>•</span> Judy <span>•</span> Lauren</div>
+    <div class="status"><span class="dot"></span>Proposed · not yet booked</div>
+  </header>
+
+  <nav class="nav">
+    <a href="#flights">Flights</a>
+    <a href="#wedding">Wedding</a>
+    <a href="#health">Health</a>
+  </nav>
+
+  <!-- ===================== FLIGHTS ===================== -->
+  <section id="flights" class="block">
+    <div class="s-head">
+      <div class="ico">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+      </div>
+      <div><h2>Flights</h2><div class="sub">Vancouver ⇄ Chiang Mai</div></div>
+    </div>
+    <div class="crumb">The journey · Cathay Pacific</div>
+
+    <!-- OUTBOUND -->
+    <div class="journey">
+      <div class="j-head">
+        <div class="j-title">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 16l7-2 4-9 1 .3-1.5 8.2 5-1.4.5 1.6-6 2.2-3 4-1-.3 1.3-3.1L5 17.4z" fill="currentColor"/></svg></div>
+          <div><h3>Outbound</h3><div class="date">Wed 2 — Thu 3 Sep 2026</div></div>
+        </div>
+        <div class="j-total">Total journey<b>18h 45m</b></div>
+      </div>
+      <div class="timeline">
+        <div class="node endpoint"><div class="station"><div class="code">YVR</div><div class="meta"><div class="city">Vancouver</div><div class="term">Terminal M</div></div><div class="time"><b>09:55</b><small>Wed 2 Sep</small></div></div></div>
+        <div class="leg">
+          <div class="leg-top"><div class="leg-flt"><span class="no">CX 815</span><span class="craft">Boeing 777-300</span></div><span class="cabin">Premium Economy</span></div>
+          <div class="leg-body">
+            <div class="ep"><div class="c">YVR</div><div class="t">09:55</div><div class="d">Wed 2 Sep</div></div>
+            <div class="leg-mid"><div class="dur">13h 25m</div><div class="track"><span class="ln"></span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg><span class="ln"></span></div></div>
+            <div class="ep to"><div class="c">HKG</div><div class="t">14:20</div><div class="d">Thu 3 Sep</div></div>
+          </div>
+          <div class="leg-foot"><span class="f"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9V2H9v7a3 3 0 0 0 2 2.83V22h2V11.83A3 3 0 0 0 15 9V2h-2v7zM18 2v20h2V14h2V7a5 5 0 0 0-4-5z"/></svg>Meal included</span><span class="f">Class E</span></div>
+        </div>
+        <div class="node layover"><div class="lay-card">
+          <div class="lay-head"><div class="ttl"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Layover · Hong Kong</div><div class="gap">2h 30m</div></div>
+          <div class="lay-times">Arrive 14:20 → depart 16:50</div>
+          <div class="lay-note info"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 2 7v7c0 5 4 8 10 8s10-3 10-8V7z" opacity=".25"/><path d="M11 16V9l-3 2v-1l4-3 4 3v1l-3-2v7z"/></svg><span>Arrive <b>Terminal 1</b>, depart <b>Terminal 2</b> — allow time to change terminals.</span></div>
+        </div></div>
+        <div class="leg">
+          <div class="leg-top"><div class="leg-flt"><span class="no">CX 5744</span><span class="craft">Airbus A321neo</span></div><span class="cabin">Economy</span></div>
+          <div class="leg-body">
+            <div class="ep"><div class="c">HKG</div><div class="t">16:50</div><div class="d">Thu 3 Sep</div></div>
+            <div class="leg-mid"><div class="dur">2h 50m</div><div class="track"><span class="ln"></span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg><span class="ln"></span></div></div>
+            <div class="ep to"><div class="c">CNX</div><div class="t">18:40</div><div class="d">Thu 3 Sep</div></div>
+          </div>
+          <div class="leg-foot"><span class="f"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9V2H9v7a3 3 0 0 0 2 2.83V22h2V11.83A3 3 0 0 0 15 9V2h-2v7zM18 2v20h2V14h2V7a5 5 0 0 0-4-5z"/></svg>Meal included</span><span class="f">Class H</span></div>
+        </div>
+        <div class="node endpoint"><div class="station"><div class="code">CNX</div><div class="meta"><div class="city">Chiang Mai</div><div class="term">Arrival</div></div><div class="time"><b>18:40</b><small>Thu 3 Sep</small></div></div></div>
+      </div>
+    </div>
+
+    <!-- RETURN -->
+    <div class="journey">
+      <div class="j-head">
+        <div class="j-title">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 19l-7 2-4-9-1 .3 1.5 8.2-5-1.4-.5 1.6 6 2.2 3 4 1-.3-1.3-3.1L19 18z" fill="currentColor"/></svg></div>
+          <div><h3>Return</h3><div class="date">Wed 9 Sep 2026</div></div>
+        </div>
+        <div class="j-total">Total journey<b>16h 25m</b></div>
+      </div>
+      <div class="timeline">
+        <div class="node endpoint"><div class="station"><div class="code">CNX</div><div class="meta"><div class="city">Chiang Mai</div><div class="term">Departure</div></div><div class="time"><b>19:25</b><small>Wed 9 Sep</small></div></div></div>
+        <div class="leg">
+          <div class="leg-top"><div class="leg-flt"><span class="no">CX 5755</span><span class="craft">Airbus A321neo</span></div><span class="cabin tbc">Cabin TBC</span></div>
+          <div class="leg-body">
+            <div class="ep"><div class="c">CNX</div><div class="t">19:25</div><div class="d">Wed 9 Sep</div></div>
+            <div class="leg-mid"><div class="dur">2h 50m</div><div class="track"><span class="ln"></span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg><span class="ln"></span></div></div>
+            <div class="ep to"><div class="c">HKG</div><div class="t">23:15</div><div class="d">Wed 9 Sep</div></div>
+          </div>
+          <div class="leg-foot"><span class="f"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9V2H9v7a3 3 0 0 0 2 2.83V22h2V11.83A3 3 0 0 0 15 9V2h-2v7zM18 2v20h2V14h2V7a5 5 0 0 0-4-5z"/></svg>Meal included</span><span class="f op">Operated by HK Express</span></div>
+        </div>
+        <div class="node layover"><div class="lay-card">
+          <div class="lay-head"><div class="ttl"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Layover · Hong Kong</div><div class="gap">1h 30m</div></div>
+          <div class="lay-times">Arrive 23:15 → depart 00:45 (Terminal 1)</div>
+          <div class="lay-note warn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4 3 20h18z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 10h2v5h-2zm0 6h2v2h-2z"/></svg><span><b>Tight connection.</b> Just 90 minutes, and it crosses midnight. Keep an eye on the inbound arrival.</span></div>
+        </div></div>
+        <div class="leg">
+          <div class="leg-top"><div class="leg-flt"><span class="no">CX 888</span><span class="craft">Boeing 777-300</span></div><span class="cabin tbc">Cabin TBC</span></div>
+          <div class="leg-body">
+            <div class="ep"><div class="c">HKG</div><div class="t">00:45</div><div class="d">Thu 10 Sep</div></div>
+            <div class="leg-mid"><div class="dur">12h 05m</div><div class="track"><span class="ln"></span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg><span class="ln"></span></div></div>
+            <div class="ep to"><div class="c">YVR</div><div class="t">21:50</div><div class="d">Wed 9 Sep</div></div>
+          </div>
+          <div class="leg-foot"><span class="f"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9V2H9v7a3 3 0 0 0 2 2.83V22h2V11.83A3 3 0 0 0 15 9V2h-2v7zM18 2v20h2V14h2V7a5 5 0 0 0-4-5z"/></svg>Meal included</span><span class="f">Terminal M on arrival</span></div>
+        </div>
+        <div class="node endpoint"><div class="station"><div class="code">YVR</div><div class="meta"><div class="city">Vancouver</div><div class="term">Home</div></div><div class="time"><b>21:50</b><small>Wed 9 Sep</small></div><span class="tag">−1 day</span></div></div>
+      </div>
+    </div>
+
+    <div class="gtk">
+      <h4><span class="d"></span>Good to know</h4>
+      <ul>
+        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><b>You land before you leave.</b> The return departs Hong Kong 00:45 on Thu 10 Sep but arrives Vancouver 21:50 on Wed 9 Sep — that's the date line, not an error.</span></li>
+        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 9l7-7 7 7"/></svg></span><span><b>Mind the 90-minute HKG connection</b> on the way home. The outbound layover (2h 30m) is comfortable; the return is snug.</span></li>
+        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2 12h20v2H2zm2 4h16v2H4zM6 4h12l2 6H4z"/></svg></span><span><b>Pack to Asian-carrier limits.</b> Size and weight are enforced strictly — confirm checked &amp; carry-on allowances once the fare is booked.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== WEDDING ===================== -->
+  <section id="wedding" class="block">
+    <div class="s-head">
+      <div class="ico">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="14" r="5"/><circle cx="16" cy="14" r="5"/><path d="M8 9l2-5h4l2 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div><h2>Wedding Day</h2><div class="sub">Why we're all here</div></div>
+    </div>
+    <div class="crumb">The celebration</div>
+
+    <div class="w-hero">
+      <div class="w-eyebrow">Join us in celebrating</div>
+      <div class="w-names">Mercy <span class="w-amp">&amp;</span> Max</div>
+      <div class="w-rule"><span class="l"></span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg><span class="l"></span></div>
+      <div class="w-date"><b>Saturday · 5 September 2026</b></div>
+    </div>
+
+    <div class="w-details">
+      <div class="w-row">
+        <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div>
+          <div class="lab">Schedule</div>
+          <div class="val"><span class="nm">Ceremony 3:00 pm</span></div>
+          <div class="sm">Reception with a traditional Chinese-Thai dinner to follow, catered by close friends of the family.</div>
+        </div>
+      </div>
+
+      <div class="w-row">
+        <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <div>
+          <div class="lab">Venue</div>
+          <div class="val"><span class="nm">Acts Church of Chiang Mai</span></div>
+          <div class="sm">206 Moo 1, Baan Nae Kha Noi Kaimook Soi 4, Pa Daet, Mueang, Chiang Mai 50100</div>
+          <a class="maps-btn" href="https://maps.app.goo.gl/4HEagNGvcpJci7rQ7?g_st=ic" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            Open in Maps
+          </a>
+        </div>
+      </div>
+
+      <div class="w-row">
+        <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v7a3 3 0 0 0 6 0V2M9 9v13M18 2c-1.5 0-2.5 2-2.5 5s1 4 2.5 4v11"/></svg></div>
+        <div>
+          <div class="lab">Attire</div>
+          <div class="val">Semi-formal</div>
+          <div class="sm">Suit jackets for the men; midi-length dresses are ideal. Covered shoulders and knees read as polite — in Thai culture, modest and well-mannered are the same idea.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.9H22l-5.8 4.3 2.2 7L12 16l-6.4 4.2 2.2-7L2 8.9h7.6z"/></svg>
+      <p><b>A quiet coincidence woven through this guide:</b> in Thai tradition each weekday carries a colour, and Saturday's is purple. The violet running through these pages quietly honours the day.</p>
+    </div>
+  </section>
+
+  <!-- ===================== HEALTH ===================== -->
+  <section id="health" class="block">
+    <div class="s-head">
+      <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2h2v6h6v2h-6v12h-2V10H5V8h6z"/></svg></div>
+      <div><h2>Health &amp; Vaccinations</h2><div class="sub">Chiang Mai · September</div></div>
+    </div>
+    <div class="crumb">Before you go</div>
+
+    <div class="reassure">
+      <div class="chk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <div><b>Nothing required to enter</b><p>No mandatory vaccines for arrivals from Canada. Yellow fever proof is only needed if arriving from a risk country in Africa or South America — your route doesn't apply.</p></div>
+    </div>
+
+    <div class="card">
+      <div class="lbl"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12z"/></svg>Recommended</div>
+      <div class="vx">
+        <div class="vrow"><span class="pip core"></span><span class="nm">Routine, up to date</span><span class="nt">— MMR / measles, Tdap, polio</span></div>
+        <div class="vrow"><span class="pip core"></span><span class="nm">Hepatitis A</span><span class="nt">— advised for most travelers</span></div>
+        <div class="vrow"><span class="pip opt"></span><span class="nm">Typhoid</span><span class="nt">— lots of street food / longer stay</span></div>
+        <div class="vrow"><span class="pip opt"></span><span class="nm">Hep B · Rabies · JE</span><span class="nt">— activity-dependent</span></div>
+      </div>
+      <div class="vlegend"><span><span class="pip core"></span>Worth confirming</span><span><span class="pip opt"></span>Situational</span></div>
+    </div>
+
+    <div class="callout rain">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 16a4 4 0 0 1-.5-8 5.5 5.5 0 0 1 10.6-1A3.5 3.5 0 0 1 17 16"/><path d="M8 19l-1 2M12 19l-1 2M16 19l-1 2"/></svg>
+      <div><div class="ttl">Rainy season → mosquitoes</div><p>September is green season. <b>Dengue</b> is the main concern and has no traveler's prophylaxis, so bite prevention is the defense — DEET or picaridin repellent, day and evening, since the mosquito bites in daylight too.</p></div>
+    </div>
+
+    <div class="callout malaria">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2v3M12 22c-4-4-7-7.5-7-12a7 7 0 0 1 14 0c0 4.5-3 8-7 12z"/></svg>
+      <div><div class="ttl">Malaria — not a city concern</div><p>Risk sits in remote border provinces, not Chiang Mai city or the usual sights. Antimalarials generally aren't advised unless you add rural border trekking.</p></div>
+    </div>
+
+    <div class="action">
+      <div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <div><b>One travel-clinic visit</b><p><span class="lead">6–8 weeks before you fly</span> lets multi-dose vaccines take full effect. Departing early September from a June start, you have comfortable lead time.</p></div>
+    </div>
+
+    <p class="disc"><b>General guidance, not personal medical advice.</b> A travel-medicine clinic can tailor this to each traveler's history and plans. Sources: CDC &amp; WHO travelers' health.</p>
+  </section>
+
+  <footer>
+    <div class="b">Chiang Mai · September 2026</div>
+    Flight times shown in local time at each airport.<br>
+    Booking reference, seats &amp; baggage to be added once confirmed.
+  </footer>
+
+</div>
+</body>
+</html>
