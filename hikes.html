@@ -84,16 +84,6 @@
   .crumb::after{content:"❉";font-size:8px;color:var(--gold-soft);}
   .block{margin-top:34px;animation:rise .7s cubic-bezier(.2,.7,.2,1) both;}
 
-  /* Overview hero */
-  .overview{margin-top:20px;background:linear-gradient(155deg,var(--forest) 0%,#2E4A38 100%);color:#e7f0ea;border-radius:22px;padding:26px 22px 24px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
-  .overview::before{content:"";position:absolute;inset:0;opacity:.5;
-    background:radial-gradient(70% 55% at 90% 100%,rgba(201,162,75,.35),transparent 60%),radial-gradient(50% 40% at 5% 5%,rgba(139,126,200,.32),transparent 65%);}
-  .overview > *{position:relative;z-index:1;}
-  .overview .eyebrow{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;}
-  .overview h3{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:30px;color:#fff;margin:10px 0 8px;letter-spacing:-.018em;line-height:1.02;font-variation-settings:"opsz" 144,"SOFT" 100;}
-  .overview p{font-size:13px;line-height:1.6;color:#d4e2d9;}
-  .overview p b{color:#fff;}
-
   /* Hike card */
   .hike{background:var(--lav-card);border:1px solid rgba(218,210,236,.7);border-radius:18px;box-shadow:var(--shadow-sm);padding:18px 18px 16px;margin-top:14px;position:relative;overflow:hidden;}
   .hike::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--jade),var(--forest));}
@@ -146,22 +136,21 @@
   footer .b{font-family:'Fraunces',serif;color:var(--forest);font-weight:600;font-style:italic;font-size:13px;font-variation-settings:"opsz" 24,"SOFT" 80;display:block;margin-bottom:4px;}
 
   @keyframes rise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  @media (max-width:360px){h1{font-size:36px;}.overview h3{font-size:26px;}}
+  @media (max-width:360px){h1{font-size:36px;}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <a class="back" href="index.html">← Chiang Mai 2026</a>
+  <a class="back" href="index.html">← HOME PAGE</a>
 
   <header>
     <div class="kicker">Green Season</div>
-    <h1>Hikes<br><em>&amp; Waterfalls</em></h1>
+    <h1>Hikes</h1>
     <div class="subhead">Day walks and forest treks around Chiang Mai in September — lush, muddy, and mostly to ourselves.</div>
   </header>
 
   <nav class="nav">
-    <a href="#overview">Overview</a>
     <a href="#monks">Monk's Trail</a>
     <a href="#padoksiew">Pha Dok Siew</a>
     <a href="#sticky">Sticky Waterfalls</a>
@@ -169,15 +158,6 @@
     <a href="#doipui">Doi Pui</a>
     <a href="#prep">September prep</a>
   </nav>
-
-  <!-- OVERVIEW -->
-  <section id="overview" class="block">
-    <div class="overview">
-      <div class="eyebrow">The rainy-season deal</div>
-      <h3>Lush, green,<br>and slick underfoot</h3>
-      <p>September puts the forests at their most cinematic — <b>moss-thick, misty, and quiet</b> — but trails will also be <b>slippery and muddy</b>. Everything below is easily reachable from the InterContinental via a short Grab ride or a guided tour.</p>
-    </div>
-  </section>
 
   <!-- MONK'S TRAIL -->
   <section id="monks" class="block">

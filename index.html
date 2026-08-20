@@ -5,544 +5,279 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#5D4E8C">
-<title>Chiang Mai 2026 · Travel Guide</title>
+<meta name="theme-color" content="#3E3460">
+<title>Chiang Mai 2026</title>
+<meta name="description" content="Chiang Mai 2026 — the trip guide.">
+<meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,30..100;1,9..144,400..600,30..100&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --violet:#8B7EC8; --violet-deep:#5D4E8C; --aubergine:#3E3460;
-    --lav-bg:#F4F1FA; --lav-card:#FFFFFF; --lav-tint:#EFEAFA;
-    --gold:#C9A24B; --gold-soft:#E6D2A0; --ink:#2E2A3A; --muted:#8A7FA8;
-    --line:#DAD2EC; --jade:#5B8C6E; --jade-soft:#DCEBE1;
-    --shadow:0 10px 30px -12px rgba(62,52,96,.35);
-    --shadow-sm:0 4px 14px -6px rgba(62,52,96,.30);
+    --lav-bg:#F4F1FA;
+    --gold:#C9A24B; --gold-deep:#A8842E; --gold-soft:#E6D2A0;
+    --ink:#2E2A3A;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
-  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  html{-webkit-text-size-adjust:100%;}
   body{
     font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
-    color:var(--ink);background:var(--lav-bg);
+    color:var(--ink);
+    background:var(--lav-bg);
     background-image:
-      radial-gradient(120% 60% at 85% -5%, rgba(139,126,200,.30), transparent 60%),
-      radial-gradient(90% 50% at 0% 8%, rgba(201,162,75,.10), transparent 55%),
-      radial-gradient(80% 60% at 50% 110%, rgba(93,78,140,.18), transparent 60%);
-    background-attachment:fixed;line-height:1.5;-webkit-font-smoothing:antialiased;
-    padding:0 0 56px;position:relative;
+      radial-gradient(120% 60% at 85% -5%, rgba(139,126,200,.34), transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, rgba(201,162,75,.14), transparent 55%),
+      radial-gradient(80% 60% at 50% 110%, rgba(93,78,140,.24), transparent 60%);
+    background-attachment:fixed;
+    padding:22px 20px 40px;min-height:100vh;position:relative;
+    -webkit-font-smoothing:antialiased;
     font-feature-settings:"kern","liga","calt","ss01";
-    text-rendering:optimizeLegibility;
   }
-  /* fine grain — settles the palette, hides banding */
+  /* Noise film */
   body::before{
-    content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.42;mix-blend-mode:multiply;
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.42;mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .24  0 0 0 0 .20  0 0 0 0 .38  0 0 0 .06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
-  .wrap, header, section, nav, footer{position:relative;z-index:2;}
-  .wrap{max-width:460px;margin:0 auto;padding:0 20px;}
-  section{scroll-margin-top:64px;}
-
-  /* ---------- Header ---------- */
-  header{padding:46px 0 18px;text-align:center;position:relative;}
-  /* Faint orchid silhouette behind the title — sets atmosphere */
-  header::before{
-    content:"";position:absolute;left:50%;top:18px;width:280px;height:280px;transform:translateX(-50%);
-    pointer-events:none;opacity:.13;z-index:-1;
-    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%235D4E8C' stroke-width='.6'><g transform='translate(100 100)'><ellipse rx='42' ry='14' transform='rotate(20)'/><ellipse rx='42' ry='14' transform='rotate(80)'/><ellipse rx='42' ry='14' transform='rotate(140)'/><ellipse rx='42' ry='14' transform='rotate(200)'/><ellipse rx='42' ry='14' transform='rotate(260)'/><ellipse rx='42' ry='14' transform='rotate(320)'/><circle r='10' fill='%23C9A24B' fill-opacity='.4' stroke='none'/></g></svg>") center/contain no-repeat;
+  /* Signature orchid mark behind the grid */
+  body::after{
+    content:"";position:fixed;left:50%;top:50%;width:560px;height:560px;transform:translate(-50%,-50%);
+    pointer-events:none;z-index:0;opacity:.055;
+    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%235D4E8C' stroke-width='.6'><g transform='translate(100 100)'><ellipse rx='58' ry='19' transform='rotate(20)'/><ellipse rx='58' ry='19' transform='rotate(80)'/><ellipse rx='58' ry='19' transform='rotate(140)'/><ellipse rx='58' ry='19' transform='rotate(200)'/><ellipse rx='58' ry='19' transform='rotate(260)'/><ellipse rx='58' ry='19' transform='rotate(320)'/><circle r='14' fill='%23C9A24B' fill-opacity='.5' stroke='none'/></g></svg>") center/contain no-repeat;
   }
-  .kicker{font-size:10.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--violet-deep);font-weight:600;
-    display:inline-flex;align-items:center;gap:12px;padding-left:.42em;font-feature-settings:"smcp","c2sc","ss01";}
-  .kicker::before,.kicker::after{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--gold) 50%,transparent);display:inline-block;}
-  h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:44px;line-height:1.0;letter-spacing:-.022em;color:var(--aubergine);margin:16px 0 8px;
-    font-variation-settings:"opsz" 144,"SOFT" 60;font-feature-settings:"ss01","ss02","liga","dlig","kern";}
-  h1 em{font-style:italic;color:var(--violet-deep);font-variation-settings:"opsz" 144,"SOFT" 100;letter-spacing:-.012em;}
-  .subhead{color:var(--muted);font-size:14px;font-weight:500;font-style:italic;font-family:'Fraunces',serif;font-variation-settings:"opsz" 14,"SOFT" 80;}
-  .travellers{margin-top:16px;font-size:13px;color:var(--violet-deep);font-weight:600;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;letter-spacing:.04em;}
-  .travellers span{color:var(--gold);opacity:.7;font-size:9px;transform:translateY(-1px);}
-  .status{margin:20px auto 0;display:inline-flex;align-items:center;gap:8px;background:rgba(201,162,75,.14);border:1px solid var(--gold-soft);
-    color:#8a6d24;font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:7px 14px;border-radius:100px;text-transform:uppercase;}
-  .status .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.25);}
 
-  /* ---------- Sticky nav ---------- */
-  .nav{position:sticky;top:0;z-index:20;margin:18px -20px 0;padding:11px 20px;
-    background:rgba(244,241,250,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(218,210,236,.7);display:flex;gap:9px;justify-content:flex-start;
-    overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;
-    -webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;
-    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%);
-            mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%);}
-  .nav::-webkit-scrollbar{display:none;}
-  .nav a{font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--violet-deep);text-decoration:none;
-    padding:8px 16px;border-radius:100px;background:#fff;border:1px solid var(--line);transition:.2s cubic-bezier(.2,.7,.2,1);box-shadow:0 1px 0 rgba(255,255,255,.5) inset;
-    flex:none;white-space:nowrap;scroll-snap-align:start;}
-  .nav a:hover{border-color:var(--gold-soft);color:var(--aubergine);}
-  .nav a:active{transform:scale(.95);background:var(--lav-tint);}
+  .grid{
+    position:relative;z-index:1;
+    max-width:460px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  }
 
-  /* ---------- Section heads ---------- */
-  .s-head{display:flex;align-items:center;gap:11px;margin-bottom:5px;}
-  .s-head .ico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;flex:none;background:var(--aubergine);color:#fff;box-shadow:var(--shadow-sm),inset 0 0 0 1px rgba(201,162,75,.2);position:relative;}
-  .s-head .ico::after{content:"";position:absolute;inset:3px;border-radius:8px;border:1px solid rgba(255,255,255,.06);pointer-events:none;}
-  .s-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;color:var(--aubergine);line-height:1;letter-spacing:-.015em;font-variation-settings:"opsz" 96,"SOFT" 50;font-feature-settings:"ss01","liga";}
-  .s-head .sub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--violet-deep);font-weight:600;margin-top:5px;}
-  .crumb{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:0 0 16px 49px;display:flex;align-items:center;gap:9px;}
-  .crumb::before{content:"";width:14px;height:1px;background:linear-gradient(90deg,transparent,var(--gold));}
-  .crumb::after{content:"❉";font-size:8px;color:var(--gold-soft);letter-spacing:0;}
-  .block{margin-top:34px;animation:rise .7s cubic-bezier(.2,.7,.2,1) both;}
+  /* ---------- Tile base ---------- */
+  .tile{
+    position:relative;display:block;text-decoration:none;color:inherit;
+    aspect-ratio:1 / 1;
+    border-radius:22px;overflow:hidden;
+    box-shadow:0 14px 34px -16px rgba(30,20,50,.42), 0 2px 6px -3px rgba(30,20,50,.20);
+    isolation:isolate;
+    transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s;
+    opacity:0;transform:translateY(10px);
+    animation:rise .55s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .tile:nth-child(1){animation-delay:.04s;} .tile:nth-child(2){animation-delay:.08s;}
+  .tile:nth-child(3){animation-delay:.12s;} .tile:nth-child(4){animation-delay:.16s;}
+  .tile:nth-child(5){animation-delay:.20s;} .tile:nth-child(6){animation-delay:.24s;}
+  .tile:nth-child(7){animation-delay:.28s;} .tile:nth-child(8){animation-delay:.32s;}
+  .tile:nth-child(9){animation-delay:.36s;}
 
-  /* ---------- Journey ---------- */
-  .journey{margin-top:22px;}
-  .j-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:18px;padding:0 2px;}
-  .j-title{display:flex;align-items:center;gap:11px;}
-  .j-title .ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--violet-deep);color:#fff;flex:none;box-shadow:var(--shadow-sm);}
-  .j-title h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px;color:var(--aubergine);line-height:1;letter-spacing:-.015em;font-variation-settings:"opsz" 96,"SOFT" 60;font-style:italic;}
-  .j-title .date{font-size:12px;color:var(--muted);font-weight:600;margin-top:4px;font-variant-numeric:tabular-nums;}
-  .j-total{text-align:right;font-size:10px;color:var(--muted);font-weight:600;line-height:1.3;letter-spacing:.14em;text-transform:uppercase;}
-  .j-total b{display:block;font-size:16px;color:var(--violet-deep);font-family:'Fraunces',serif;font-variant-numeric:tabular-nums;letter-spacing:-.01em;text-transform:none;margin-top:2px;font-variation-settings:"opsz" 72;}
+  .tile:hover{transform:translateY(-4px);box-shadow:0 22px 46px -18px rgba(30,20,50,.55), 0 3px 8px -3px rgba(30,20,50,.24);}
+  .tile:active{transform:translateY(-1px) scale(.985);}
 
-  .timeline{position:relative;padding-left:34px;}
-  .timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--violet),var(--violet-deep));border-radius:2px;opacity:.55;}
-  .node{position:relative;}
-  .node::before{content:"";position:absolute;left:-34px;top:3px;width:20px;height:20px;border-radius:50%;background:var(--lav-bg);border:2px solid var(--violet-deep);}
-  .node.endpoint::before{background:var(--aubergine);border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.28);}
-  .node.layover::before{width:14px;height:14px;left:-31px;top:6px;border-style:dashed;border-color:var(--violet);background:#fff;}
+  /* Motif layer — fills entire tile */
+  .motif{
+    position:absolute;inset:0;pointer-events:none;z-index:1;
+    background-repeat:no-repeat;
+  }
 
-  .station{display:flex;align-items:baseline;gap:12px;padding:0 0 4px;}
-  .station .code{font-family:'Fraunces',serif;font-weight:600;font-size:32px;color:var(--aubergine);letter-spacing:-.025em;line-height:1;font-variation-settings:"opsz" 144,"SOFT" 40;font-feature-settings:"ss01";}
-  .station .meta{flex:1;}
-  .station .city{font-size:13px;font-weight:600;color:var(--violet-deep);}
-  .station .term{font-size:11px;color:var(--muted);font-weight:500;}
-  .station .time{text-align:right;}
-  .station .time b{font-family:'Fraunces',serif;font-size:20px;color:var(--aubergine);font-weight:600;font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum","lnum";}
-  .station .time small{display:block;font-size:10.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
-  .station .tag{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-soft);border-radius:5px;padding:2px 6px;align-self:center;}
+  /* Name typography */
+  .name{
+    position:absolute;left:20px;right:20px;bottom:18px;z-index:3;
+    font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:26px;
+    line-height:.98;letter-spacing:-.02em;
+    font-variation-settings:"opsz" 96,"SOFT" 60;
+  }
+  .name em{
+    display:block;font-style:italic;font-weight:500;
+    font-size:.62em;margin-top:5px;letter-spacing:-.012em;
+    font-variation-settings:"opsz" 72,"SOFT" 100;
+  }
 
-  .leg{position:relative;margin:14px 0;background:var(--lav-card);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(218,210,236,.7);}
-  .leg::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--gold),var(--gold-soft));}
-  .leg-top{display:flex;align-items:center;justify-content:space-between;padding:13px 16px 11px 18px;background:var(--lav-tint);border-bottom:1px dashed var(--line);}
-  .leg-flt{display:flex;align-items:center;gap:9px;}
-  .leg-flt .no{font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--violet-deep);letter-spacing:.04em;font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum","lnum","ss01";}
-  .leg-flt .craft{font-size:11px;color:var(--muted);font-weight:600;}
-  .cabin{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--violet-deep);color:#fff;padding:4px 9px;border-radius:6px;}
-  .cabin.tbc{background:transparent;color:var(--muted);border:1px dashed var(--line);}
-  .leg-top::after,.leg-top::before{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--lav-bg);bottom:-7px;z-index:2;}
-  .leg-top::before{left:-7px;}.leg-top::after{right:-7px;}
-  .leg-body{display:flex;align-items:center;gap:10px;padding:16px 18px;}
-  .ep{flex:1;min-width:0;}.ep.to{text-align:right;}
-  .ep .c{font-family:'Fraunces',serif;font-weight:600;font-size:28px;color:var(--aubergine);line-height:1;letter-spacing:-.028em;font-variation-settings:"opsz" 144,"SOFT" 40;}
-  .ep .t{font-size:15px;font-weight:700;color:var(--violet-deep);margin-top:4px;font-variant-numeric:tabular-nums;font-feature-settings:"tnum","lnum";letter-spacing:-.01em;}
-  .ep .d{font-size:10.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
-  .leg-mid{display:flex;flex-direction:column;align-items:center;color:var(--violet);flex:none;width:74px;}
-  .leg-mid .dur{font-size:10.5px;font-weight:700;color:var(--violet-deep);margin-bottom:4px;font-variant-numeric:tabular-nums;letter-spacing:.02em;}
-  .leg-mid .track{display:flex;align-items:center;width:100%;color:var(--gold);}
-  .leg-mid .track .ln{flex:1;height:1.5px;background:repeating-linear-gradient(90deg,var(--gold) 0 4px,transparent 4px 8px);}
-  .leg-mid svg{flex:none;}
-  .leg-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:0 18px 14px;font-size:11px;color:var(--muted);font-weight:600;}
-  .leg-foot .f{display:inline-flex;align-items:center;gap:5px;}
-  .leg-foot .f svg{color:var(--violet);flex:none;}
-  .leg-foot .op{color:var(--gold);}
+  /* Wide tile — Elephants closer */
+  .tile.wide{grid-column:1 / -1;aspect-ratio:2.15 / 1;}
+  .tile.wide .name{font-size:36px;left:24px;bottom:20px;}
+  .tile.wide .name em{font-size:.5em;margin-top:6px;}
 
-  .layover .lay-card{background:rgba(239,234,250,.7);border:1px dashed var(--violet);border-radius:13px;padding:12px 15px;}
-  .lay-head{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-  .lay-head .ttl{font-size:12px;font-weight:700;color:var(--violet-deep);display:flex;align-items:center;gap:7px;}
-  .lay-head .gap{font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--aubergine);font-variant-numeric:tabular-nums;font-variation-settings:"opsz" 36;letter-spacing:-.01em;}
-  .lay-times{font-size:11px;color:var(--muted);font-weight:600;margin-top:5px;font-variant-numeric:tabular-nums;}
-  .lay-note{margin-top:9px;font-size:11px;line-height:1.45;color:var(--ink);display:flex;gap:7px;align-items:flex-start;}
-  .lay-note svg{flex:none;margin-top:1px;}
-  .lay-note.warn{color:#9a3a3a;}.lay-note.warn svg{color:#c25b5b;}
-  .lay-note.info svg{color:var(--gold);}
+  @keyframes rise{to{opacity:1;transform:none;}}
 
-  .gtk{margin-top:20px;background:var(--aubergine);color:#efeafa;border-radius:18px;padding:24px 22px;box-shadow:var(--shadow),inset 0 0 0 1px rgba(201,162,75,.18);position:relative;overflow:hidden;}
-  .gtk::before{content:"";position:absolute;left:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,.18),transparent 70%);pointer-events:none;}
-  .gtk h4{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:#fff;display:flex;align-items:center;gap:10px;margin-bottom:16px;letter-spacing:-.01em;font-variation-settings:"opsz" 48,"SOFT" 50;font-style:italic;}
-  .gtk h4 .d{width:7px;height:7px;border-radius:50%;background:var(--gold);}
-  .gtk ul{list-style:none;display:flex;flex-direction:column;gap:13px;}
-  .gtk li{display:flex;gap:11px;font-size:12.5px;line-height:1.5;color:#d9cfee;}
-  .gtk li b{color:#fff;font-weight:600;}
-  .gtk li .ic{flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:rgba(201,162,75,.18);color:var(--gold-soft);margin-top:1px;}
+  /* ============================================================
+     TILE 1 — TRAVEL   deep violet transpacific sky + contrails
+  ============================================================ */
+  .t-travel{background:linear-gradient(155deg,#6b5aa0 0%,#3E3460 55%,#241d40 100%);color:#F0EAFF;}
+  .t-travel .motif{
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23E6D2A0' stroke-width='.4' stroke-linecap='round' stroke-opacity='.72'><path d='M-8 82 Q42 22 108 30' stroke-dasharray='1.2 2.8'/><path d='M-8 92 Q46 36 108 44' stroke-dasharray='1.2 2.8' stroke-opacity='.65'/><path d='M-8 70 Q38 12 108 16' stroke-dasharray='1.2 2.8' stroke-opacity='.55'/></svg>"),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(12 12) rotate(-32) translate(-12 -12)' fill='%23F0E6C8'><path d='M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z'/></g></svg>");
+    background-size:100% 100%, 62% 62%;
+    background-position:center, 68% 30%;
+    background-repeat:no-repeat, no-repeat;
+  }
+  .t-travel .name em{color:var(--gold-soft);}
 
-  /* ---------- Wedding ---------- */
-  .w-hero{position:relative;margin-top:20px;border-radius:22px;overflow:hidden;padding:34px 22px 30px;text-align:center;color:#fff;
-    background:linear-gradient(155deg,#4a3e74 0%,var(--aubergine) 55%,#2c2547 100%);box-shadow:var(--shadow),inset 0 0 0 1px rgba(201,162,75,.18);}
-  .w-hero::before{content:"";position:absolute;inset:0;opacity:.55;
-    background:radial-gradient(60% 50% at 80% 0%,rgba(201,162,75,.38),transparent 60%),radial-gradient(50% 40% at 10% 100%,rgba(139,126,200,.55),transparent 60%);}
-  /* Floating orchid silhouette */
-  .w-hero::after{content:"";position:absolute;right:-44px;bottom:-48px;width:220px;height:220px;opacity:.16;pointer-events:none;
-    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23E6D2A0' stroke-width='.7'><g transform='translate(100 100)'><ellipse rx='48' ry='16' transform='rotate(15)'/><ellipse rx='48' ry='16' transform='rotate(75)'/><ellipse rx='48' ry='16' transform='rotate(135)'/><ellipse rx='48' ry='16' transform='rotate(195)'/><ellipse rx='48' ry='16' transform='rotate(255)'/><ellipse rx='48' ry='16' transform='rotate(315)'/><circle r='12' fill='%23C9A24B' fill-opacity='.5' stroke='none'/></g></svg>") center/contain no-repeat;}
-  .w-hero > *{position:relative;z-index:1;}
-  .w-eyebrow{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;font-feature-settings:"smcp","ss01";}
-  .w-names{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:46px;line-height:1.02;margin:14px 0 6px;color:#fff;letter-spacing:-.018em;
-    font-variation-settings:"opsz" 144,"SOFT" 100;font-feature-settings:"ss01","dlig","liga","swsh";}
-  .w-amp{color:var(--gold-soft);font-style:italic;font-weight:400;font-variation-settings:"opsz" 144,"SOFT" 100;padding:0 .05em;}
-  .w-rule{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px 0 12px;color:var(--gold-soft);}
-  .w-rule .l{width:40px;height:1px;background:var(--gold-soft);opacity:.6;}
-  .w-rule svg{flex:none;}
-  .w-date{font-size:14px;font-weight:600;letter-spacing:.02em;color:#efeafa;font-variant-numeric:tabular-nums;}
-  .w-date b{font-family:'Fraunces',serif;color:#fff;font-weight:600;font-variation-settings:"opsz" 24,"SOFT" 80;}
+  /* ============================================================
+     TILE 2 — WEDDING   aubergine + gold orchid
+  ============================================================ */
+  .t-wedding{background:
+    radial-gradient(60% 50% at 80% 0%,rgba(201,162,75,.55),transparent 60%),
+    radial-gradient(50% 40% at 10% 100%,rgba(139,126,200,.55),transparent 60%),
+    linear-gradient(155deg,#4a3e74 0%,#3E3460 55%,#2c2547 100%);
+    color:#fff;
+  }
+  .t-wedding .motif{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><g transform='translate(50 52)'><g fill='%23F5EBD3' fill-opacity='.9' stroke='%23E6D2A0' stroke-width='.35' stroke-opacity='.55'><path d='M 0 -6 Q -8 -14 -10 -22 Q -6 -30 0 -30 Q 6 -30 10 -22 Q 8 -14 0 -6 Z'/><path d='M 0 -6 Q -8 -14 -10 -22 Q -6 -30 0 -30 Q 6 -30 10 -22 Q 8 -14 0 -6 Z' transform='rotate(72)'/><path d='M 0 -6 Q -8 -14 -10 -22 Q -6 -30 0 -30 Q 6 -30 10 -22 Q 8 -14 0 -6 Z' transform='rotate(144)'/><path d='M 0 -6 Q -8 -14 -10 -22 Q -6 -30 0 -30 Q 6 -30 10 -22 Q 8 -14 0 -6 Z' transform='rotate(216)'/><path d='M 0 -6 Q -8 -14 -10 -22 Q -6 -30 0 -30 Q 6 -30 10 -22 Q 8 -14 0 -6 Z' transform='rotate(288)'/></g><g fill='none' stroke='%23A8842E' stroke-width='.5' stroke-opacity='.55'><path d='M 0 -8 Q -3 -16 -3 -24' transform='rotate(0)'/><path d='M 0 -8 Q -3 -16 -3 -24' transform='rotate(72)'/><path d='M 0 -8 Q -3 -16 -3 -24' transform='rotate(144)'/><path d='M 0 -8 Q -3 -16 -3 -24' transform='rotate(216)'/><path d='M 0 -8 Q -3 -16 -3 -24' transform='rotate(288)'/></g><circle r='7' fill='%23C9A24B'/><circle r='4' fill='%23A8842E'/><circle r='1.8' fill='%23E6D2A0'/></g></svg>");
+    background-size:100% 100%;
+  }
+  .t-wedding .name em{color:#E6D2A0;}
 
-  .w-details{margin-top:14px;display:flex;flex-direction:column;gap:11px;}
-  .w-row{background:var(--lav-card);border:1px solid rgba(218,210,236,.7);border-radius:14px;box-shadow:var(--shadow-sm);
-    padding:14px 15px;display:flex;gap:12px;align-items:flex-start;}
-  .w-row .ic{width:32px;height:32px;border-radius:9px;flex:none;display:grid;place-items:center;background:var(--lav-tint);color:var(--violet-deep);}
-  .w-row .lab{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:3px;}
-  .w-row .val{font-size:14px;font-weight:600;color:var(--ink);line-height:1.35;}
-  .w-row .val .nm{font-family:'Fraunces',serif;font-size:16px;color:var(--aubergine);font-variation-settings:"opsz" 36,"SOFT" 60;letter-spacing:-.005em;font-variant-numeric:tabular-nums;}
-  .w-row .sm{font-size:11.5px;color:var(--muted);font-weight:500;margin-top:3px;line-height:1.45;}
-  .maps-btn{display:inline-flex;align-items:center;gap:6px;margin-top:9px;font-size:12px;font-weight:700;color:#fff;
-    background:var(--violet-deep);text-decoration:none;padding:8px 14px;border-radius:100px;box-shadow:var(--shadow-sm);}
-  .maps-btn:active{transform:scale(.97);}
+  /* ============================================================
+     TILE 3 — MONEY   deep emerald + guilloché + ฿
+  ============================================================ */
+  .t-money{background:linear-gradient(155deg,#2b7e6b 0%,#1F6B5A 45%,#0e3830 100%);color:#F1F5EE;}
+  .t-money .motif{
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23DFC395' stroke-width='.3' opacity='.32'><g transform='translate(50 52)'><ellipse rx='44' ry='14'/><ellipse rx='44' ry='14' transform='rotate(30)'/><ellipse rx='44' ry='14' transform='rotate(60)'/><ellipse rx='44' ry='14' transform='rotate(90)'/><ellipse rx='44' ry='14' transform='rotate(120)'/><ellipse rx='44' ry='14' transform='rotate(150)'/></g></svg>"),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><g transform='translate(50 54) rotate(-10)'><rect x='-34' y='-18' width='68' height='36' rx='2.5' fill='%23F1E1B8' fill-opacity='.14' stroke='%23F0DFB2' stroke-width='.7'/><rect x='-30' y='-14' width='60' height='28' rx='1.5' fill='none' stroke='%23F0DFB2' stroke-width='.35' stroke-dasharray='1 1.6' stroke-opacity='.7'/><circle cx='0' cy='0' r='11' fill='%23F0DFB2' fill-opacity='.14' stroke='%23F0DFB2' stroke-width='.6'/><text x='0' y='4.6' text-anchor='middle' font-family='Georgia' font-size='16' font-weight='700' fill='%23F1E1B8' fill-opacity='.95'>฿</text><g fill='%23F0DFB2' fill-opacity='.85' font-family='Georgia' font-size='4.6' font-weight='700'><text x='-30.5' y='-9.5'>1000</text><text x='30.5' y='14' text-anchor='end'>1000</text></g><path d='M-30 3 L-22 3 M-30 5 L-24 5' stroke='%23F0DFB2' stroke-width='.35' stroke-opacity='.6'/><path d='M22 -5 L30 -5 M24 -3 L30 -3' stroke='%23F0DFB2' stroke-width='.35' stroke-opacity='.6'/></g></svg>");
+    background-size:100% 100%, 100% 100%;
+  }
+  .t-money .name em{color:#DFC395;}
 
-  .w-note{margin-top:13px;background:rgba(201,162,75,.12);border:1px solid var(--gold-soft);border-radius:14px;padding:14px 15px;
-    display:flex;gap:11px;align-items:flex-start;}
-  .w-note svg{flex:none;color:var(--gold);margin-top:1px;}
-  .w-note p{font-size:12px;line-height:1.5;color:#7a5f1f;}
-  .w-note b{color:#5f4a14;}
+  /* ============================================================
+     TILE 4 — FOOD   warm cream to amber + bowl + chili
+  ============================================================ */
+  .t-food{background:linear-gradient(155deg,#FBEEDF 0%,#F5D8A8 55%,#E9B074 100%);color:#3E1E14;}
+  .t-food .motif{
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'><g><path d='M28 40 q4 -10 8 0' stroke='%23B24C3A' stroke-opacity='.55' stroke-width='.9' stroke-linecap='round'/><path d='M44 32 q4 -12 8 0' stroke='%23B24C3A' stroke-opacity='.55' stroke-width='.9' stroke-linecap='round'/><path d='M60 32 q4 -12 8 0' stroke='%23B24C3A' stroke-opacity='.55' stroke-width='.9' stroke-linecap='round'/><path d='M76 40 q4 -10 8 0' stroke='%23B24C3A' stroke-opacity='.55' stroke-width='.9' stroke-linecap='round'/><path d='M18 55 Q50 82 82 55 L82 55 Z' fill='%23B24C3A' fill-opacity='.9'/><ellipse cx='50' cy='55' rx='34' ry='4' fill='%237E3820' fill-opacity='.85'/></g><g transform='translate(76 74) rotate(30)'><path d='M0 0 q-3 -3 -7 -4 t-4 -6' stroke='%237E3820' stroke-width='1' stroke-linecap='round' fill='none'/><path d='M0 0 q6 -1 8 -4 q4 6 -2 10 q-4 3 -6 -6 Z' fill='%23B24C3A'/></g></svg>");
+    background-size:100% 100%;
+  }
+  .t-food .name{color:#3E1E14;}
+  .t-food .name em{color:#B24C3A;font-style:italic;}
 
-  /* ---------- Health ---------- */
-  .reassure{background:var(--jade-soft);border:1px solid #BFD9C8;border-radius:14px;padding:15px 16px;margin-bottom:14px;display:flex;gap:12px;align-items:flex-start;}
-  .reassure .chk{width:30px;height:30px;border-radius:9px;background:var(--jade);color:#fff;display:grid;place-items:center;flex:none;}
-  .reassure b{font-family:'Fraunces',serif;font-size:17px;color:#2f5340;font-weight:600;display:block;margin-bottom:3px;font-variation-settings:"opsz" 36,"SOFT" 70;font-style:italic;letter-spacing:-.01em;}
-  .reassure p{font-size:12px;color:#3f5e4c;line-height:1.45;}
-  .card{background:var(--lav-card);border:1px solid rgba(218,210,236,.7);border-radius:16px;box-shadow:var(--shadow-sm);padding:16px 17px;margin-bottom:14px;}
-  .card .lbl{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--violet-deep);display:flex;align-items:center;gap:8px;margin-bottom:11px;}
-  .card .lbl svg{color:var(--gold);flex:none;}
-  .vx{display:flex;flex-direction:column;gap:9px;}
-  .vrow{display:flex;align-items:center;gap:10px;}
-  .vrow .pip{width:8px;height:8px;border-radius:50%;flex:none;}
-  .pip.core{background:var(--violet-deep);}
-  .pip.opt{background:transparent;border:1.5px solid var(--gold);}
-  .vrow .nm{font-size:13px;font-weight:600;color:var(--ink);}
-  .vrow .nt{font-size:11.5px;color:var(--muted);}
-  .vlegend{display:flex;gap:16px;margin-top:13px;padding-top:12px;border-top:1px dashed var(--line);font-size:10.5px;color:var(--muted);font-weight:600;}
-  .vlegend span{display:inline-flex;align-items:center;gap:6px;}
-  .callout{border-radius:14px;padding:14px 15px;margin-bottom:14px;display:flex;gap:11px;align-items:flex-start;}
-  .callout svg{flex:none;margin-top:1px;}
-  .callout .ttl{font-weight:700;font-size:12.5px;margin-bottom:3px;}
-  .callout p{font-size:12px;line-height:1.5;}
-  .callout.rain{background:var(--lav-tint);border:1px solid var(--line);}
-  .callout.rain svg{color:var(--violet-deep);}.callout.rain .ttl{color:var(--violet-deep);}.callout.rain p{color:var(--ink);}
-  .callout.malaria{background:#fff;border:1px solid rgba(218,210,236,.7);}
-  .callout.malaria svg{color:var(--gold);}.callout.malaria .ttl{color:var(--aubergine);}.callout.malaria p{color:var(--muted);}
-  .action{background:var(--aubergine);color:#efeafa;border-radius:16px;padding:17px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:flex-start;}
-  .action .ic{width:30px;height:30px;border-radius:9px;background:rgba(201,162,75,.2);color:var(--gold-soft);display:grid;place-items:center;flex:none;}
-  .action b{font-family:'Fraunces',serif;color:#fff;font-size:16px;font-weight:600;display:block;margin-bottom:3px;font-variation-settings:"opsz" 36,"SOFT" 60;font-style:italic;letter-spacing:-.01em;}
-  .action p{font-size:12px;color:#d9cfee;line-height:1.5;}
-  .action .lead{color:var(--gold-soft);font-weight:600;}
-  .disc{font-size:10.5px;color:var(--muted);line-height:1.55;margin-top:16px;text-align:center;padding:0 6px;}
-  .disc b{color:var(--violet-deep);font-weight:600;}
+  /* ============================================================
+     TILE 5 — COOKING   terracotta + wok rings + mortar corner
+  ============================================================ */
+  .t-cooking{background:linear-gradient(155deg,#c5674a 0%,#B0553A 45%,#6E301B 100%);color:#F7EED6;}
+  .t-cooking .motif{
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23F7EED6' stroke-width='.35' stroke-opacity='.42'><g transform='translate(50 52)'><circle r='12'/><circle r='20'/><circle r='28'/><circle r='36'/><circle r='44'/><circle r='52'/></g></svg>"),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><g transform='translate(50 52)'><g transform='rotate(22)'><rect x='-1.6' y='-30' width='3.2' height='20' rx='1.4' fill='%23F7EED6'/><ellipse cx='0' cy='-11' rx='3.4' ry='2.6' fill='%23F7EED6'/></g><path d='M-24 -2 L-20 22 Q0 30 20 22 L24 -2 Z' fill='%23F7EED6' fill-opacity='.85'/><ellipse cx='0' cy='-2' rx='24' ry='4.6' fill='%237E3820' fill-opacity='.55'/><ellipse cx='0' cy='-2' rx='24' ry='4.6' fill='none' stroke='%23F7EED6' stroke-width='.5'/><circle cx='-6' cy='-2' r='1.3' fill='%23B0553A'/><circle cx='4' cy='0' r='1.1' fill='%23B0553A'/><circle cx='-1' cy='1.5' r='1' fill='%23B0553A'/><circle cx='7' cy='-1' r='.9' fill='%23B0553A'/><path d='M-22 22 Q0 30 22 22 Q22 24 0 32 Q-22 24 -22 22 Z' fill='%23F7EED6' fill-opacity='.35'/></g></svg>");
+    background-size:100% 100%, 100% 100%;
+  }
+  .t-cooking .name em{color:#E5C4B4;}
 
-  footer{text-align:center;margin-top:44px;font-size:11px;color:var(--muted);line-height:1.7;position:relative;padding-top:28px;}
-  footer::after{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:140px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-soft) 25%,var(--gold-soft) 75%,transparent);opacity:.55;}
-  footer::before{content:"❉";position:absolute;top:0;left:50%;transform:translateX(-50%);color:var(--gold);font-size:13px;opacity:.85;background:var(--lav-bg);padding:0 8px;line-height:1.2;z-index:1;}
-  footer .b{font-family:'Fraunces',serif;color:var(--violet-deep);font-weight:600;font-style:italic;font-size:13px;font-variation-settings:"opsz" 24,"SOFT" 80;letter-spacing:-.005em;display:block;margin-bottom:4px;}
+  /* ============================================================
+     TILE 6 — MARKETS   midnight + lantern string + glow
+  ============================================================ */
+  .t-markets{background:
+    radial-gradient(60% 45% at 50% 30%,#3C315E 0%,transparent 62%),
+    linear-gradient(180deg,#1E1A3E 0%,#0e0a26 100%);
+    color:#FFF3C4;
+  }
+  .t-markets .motif{
+    background-image:
+      radial-gradient(circle at 18% 32%, rgba(244,183,64,.55) 0%, rgba(244,183,64,0) 6%),
+      radial-gradient(circle at 40% 24%, rgba(247,212,140,.55) 0%, rgba(247,212,140,0) 6%),
+      radial-gradient(circle at 60% 28%, rgba(244,183,64,.55) 0%, rgba(244,183,64,0) 6%),
+      radial-gradient(circle at 82% 22%, rgba(247,212,140,.55) 0%, rgba(247,212,140,0) 6%),
+      radial-gradient(circle at 30% 58%, rgba(244,183,64,.45) 0%, rgba(244,183,64,0) 5%),
+      radial-gradient(circle at 70% 62%, rgba(247,212,140,.45) 0%, rgba(247,212,140,0) 5%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'><path d='M-4 18 Q50 8 104 18' stroke='%23F4B740' stroke-opacity='.42' stroke-width='.4' stroke-dasharray='1 2'/><g fill='%23F4B740' fill-opacity='.75'><ellipse cx='18' cy='32' rx='3.2' ry='4.6'/><ellipse cx='40' cy='24' rx='3.2' ry='4.6'/><ellipse cx='60' cy='28' rx='3.2' ry='4.6'/><ellipse cx='82' cy='22' rx='3.2' ry='4.6'/></g><g stroke='%23F4B740' stroke-opacity='.7' stroke-width='.5'><path d='M18 27v-6M40 19v-6M60 23v-6M82 17v-6'/></g><g fill='%23F4B740' fill-opacity='.6'><ellipse cx='30' cy='58' rx='2.4' ry='3.4'/><ellipse cx='70' cy='62' rx='2.4' ry='3.4'/></g></svg>");
+    background-size:auto,auto,auto,auto,auto,auto,100% 100%;
+  }
+  .t-markets .name{color:#FFF3C4;}
+  .t-markets .name em{color:#F4B740;}
 
-  @keyframes rise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  @media (max-width:360px){h1{font-size:36px;}.ep .c{font-size:22px;}.leg-mid{width:62px;}.w-names{font-size:34px;}}
+  /* ============================================================
+     TILE 7 — TEMPLES   gold ochre + chedi silhouette
+  ============================================================ */
+  .t-temples{background:linear-gradient(160deg,#FBEED0 0%,#E9CE8A 55%,#B98D2A 100%);color:#5B3A1F;}
+  .t-temples .motif{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%235B3A1F' fill-opacity='.42' stroke='%235B3A1F' stroke-opacity='.55' stroke-width='.5' stroke-linejoin='round'><g><line x1='50' y1='8' x2='50' y2='18' stroke-width='.7'/><circle cx='50' cy='6' r='1.4' stroke='none'/><path d='M46 20 L50 15 L54 20 L52.5 26 L47.5 26 Z'/><path d='M44 27.5 L56 27.5 L54.5 35 L45.5 35 Z'/><path d='M41 36.5 L59 36.5 L57.5 47 L42.5 47 Z'/><path d='M37 49 L63 49 L61.5 63 L38.5 63 Z'/><path d='M31 65 L69 65 L67 81 L33 81 Z'/><path d='M25 83 L75 83 L75 92 L25 92 Z'/></g></svg>");
+    background-size:100% 100%;
+    background-position:center 4%;
+  }
+  .t-temples .name em{color:#8F6D18;}
+
+  /* ============================================================
+     TILE 8 — HIKES   forest + contour lines + ridge
+  ============================================================ */
+  .t-hikes{background:linear-gradient(155deg,#6ea583 0%,#3A5E48 55%,#22382a 100%);color:#EAF0EC;}
+  .t-hikes .motif{
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'><path d='M0 60 L14 34 L28 52 L42 30 L58 48 L72 32 L88 50 L100 40 L100 100 L0 100 Z' fill='%23DCEBE1' fill-opacity='.14'/><path d='M0 74 L12 52 L26 68 L40 44 L54 62 L68 48 L82 66 L100 52 L100 100 L0 100 Z' fill='%23DCEBE1' fill-opacity='.24'/><path d='M0 88 L18 58 L32 76 L50 34 L68 72 L82 58 L100 82 L100 100 L0 100 Z' fill='%23DCEBE1' fill-opacity='.38'/><path d='M45 46 L50 34 L55 44 L53 46 L50 41 L47 46 Z' fill='%23ffffff' fill-opacity='.85'/><g stroke='%23DCEBE1' stroke-width='.55' stroke-linejoin='round' stroke-opacity='.55'><path d='M18 88 L36 62 L28 62'/><path d='M50 34 L58 46 L68 44'/></g><path d='M22 92 Q34 80 44 66 Q46 60 50 54' stroke='%23F7EED6' stroke-width='.7' stroke-dasharray='1.4 1.8' fill='none' stroke-opacity='.85' stroke-linecap='round'/><circle cx='22' cy='92' r='1.1' fill='%23F7EED6' fill-opacity='.9'/></svg>"),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23DCEBE1' stroke-width='.28' stroke-opacity='.32'><path d='M-10 20 Q30 10 50 20 T110 20'/><path d='M-10 26 Q30 16 50 26 T110 26'/><path d='M-10 14 Q30 4 50 14 T110 14'/></svg>");
+    background-size:100% 100%, 100% 100%;
+  }
+  .t-hikes .name em{color:#C9E1D8;}
+
+  /* ============================================================
+     TILE 9 — ELEPHANTS (WIDE)   earth + jungle + elephant
+  ============================================================ */
+  .t-elephants{background:linear-gradient(100deg,#8a6a4a 0%,#5A3D2B 45%,#3A5E48 100%);color:#F5EBD3;}
+  .t-elephants .motif{
+    background-image:url("assets/elephant.svg");
+    background-size:auto 88%;
+    background-position:right 18px center;
+    background-repeat:no-repeat;
+  }
+  .t-elephants .name{color:#FFF;}
+  .t-elephants .name em{color:#F4B740;font-style:italic;}
+
+  @media (max-width:360px){
+    .tile{border-radius:18px;}
+    .name{font-size:22px;left:16px;right:16px;bottom:14px;}
+    .tile.wide .name{font-size:28px;}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <div class="kicker">Land of Smiles</div>
-    <h1>Chiang Mai<br><em>2026</em></h1>
-    <div class="subhead">Pre-departure itinerary</div>
-    <div class="travellers">BMAC <span>•</span> Judy</div>
-    <div class="status"><span class="dot"></span>Confirmed &amp; paid · PNR E2AQBT</div>
-  </header>
+  <main class="grid">
 
-  <nav class="nav">
-    <a href="#flights">Flights</a>
-    <a href="#stay">Stay</a>
-    <a href="#wedding">Wedding</a>
-    <a href="food.html">Food &amp; Coffee</a>
-    <a href="hikes.html">Hikes</a>
-    <a href="elephants.html">Elephants</a>
-    <a href="markets.html">Markets</a>
-    <a href="#health">Health</a>
-  </nav>
+    <a class="tile t-travel" href="travel.html" aria-label="Travel">
+      <div class="motif"></div>
+      <div class="name">Travel<em>&amp; Stay</em></div>
+    </a>
 
-  <!-- ===================== FLIGHTS ===================== -->
-  <section id="flights" class="block">
-    <div class="s-head">
-      <div class="ico">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
-      </div>
-      <div><h2>Flights</h2><div class="sub">Dallas ⇄ Chiang Mai · via Taipei</div></div>
-    </div>
-    <div class="crumb">The journey · EVA Air · PNR E2AQBT</div>
+    <a class="tile t-wedding" href="wedding.html" aria-label="Wedding">
+      <div class="motif"></div>
+      <div class="name">Wedding<em>Day</em></div>
+    </a>
 
-    <!-- OUTBOUND -->
-    <div class="journey">
-      <div class="j-head">
-        <div class="j-title">
-          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 16l7-2 4-9 1 .3-1.5 8.2 5-1.4.5 1.6-6 2.2-3 4-1-.3 1.3-3.1L5 17.4z" fill="currentColor"/></svg></div>
-          <div><h3>Outbound</h3><div class="date">Wed 2 — Thu 3 Sep 2026</div></div>
-        </div>
-        <div class="j-total">Total journey<b>22h 10m</b></div>
-      </div>
-      <div class="timeline">
-        <div class="node endpoint"><div class="station"><div class="code">DFW</div><div class="meta"><div class="city">Dallas / Fort Worth</div><div class="term">Terminal D</div></div><div class="time"><b>00:15</b><small>Wed 2 Sep</small></div></div></div>
-        <div class="leg">
-          <div class="leg-top"><div class="leg-flt"><span class="no">BR 49</span><span class="craft">Aircraft TBC</span></div><span class="cabin">Premium Economy</span></div>
-          <div class="leg-body">
-            <div class="ep"><div class="c">DFW</div><div class="t">00:15</div><div class="d">Wed 2 Sep</div></div>
-            <div class="leg-mid"><div class="dur">15h 45m</div><div class="track"><span class="ln"></span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg><span class="ln"></span></div></div>
-            <div class="ep to"><div class="c">TPE</div><div class="t">05:00</div><div class="d">Thu 3 Sep</div></div>
-          </div>
-          <div class="leg-foot"><span class="f"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9V2H9v7a3 3 0 0 0 2 2.83V22h2V11.83A3 3 0 0 0 15 9V2h-2v7zM18 2v20h2V14h2V7a5 5 0 0 0-4-5z"/></svg>Meal included</span><span class="f">Seats 21H / 21K</span><span class="f">Class T</span></div>
-        </div>
-        <div class="node layover"><div class="lay-card">
-          <div class="lay-head"><div class="ttl"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Layover · Taipei Taoyuan</div><div class="gap">2h 40m</div></div>
-          <div class="lay-times">Arrive 05:00 → depart 07:40 · Terminal 2</div>
-          <div class="lay-note info"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 2 7v7c0 5 4 8 10 8s10-3 10-8V7z" opacity=".25"/><path d="M11 16V9l-3 2v-1l4-3 4 3v1l-3-2v7z"/></svg><span><b>Same terminal, comfortable pace.</b> Both EVA flights use Terminal 2 — no terminal change.</span></div>
-        </div></div>
-        <div class="leg">
-          <div class="leg-top"><div class="leg-flt"><span class="no">BR 257</span><span class="craft">Aircraft TBC</span></div><span class="cabin">Economy</span></div>
-          <div class="leg-body">
-            <div class="ep"><div class="c">TPE</div><div class="t">07:40</div><div class="d">Thu 3 Sep</div></div>
-            <div class="leg-mid"><div class="dur">3h 45m</div><div class="track"><span class="ln"></span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg><span class="ln"></span></div></div>
-            <div class="ep to"><div class="c">CNX</div><div class="t">10:25</div><div class="d">Thu 3 Sep</div></div>
-          </div>
-          <div class="leg-foot"><span class="f"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9V2H9v7a3 3 0 0 0 2 2.83V22h2V11.83A3 3 0 0 0 15 9V2h-2v7zM18 2v20h2V14h2V7a5 5 0 0 0-4-5z"/></svg>Meal included</span><span class="f">Seats 25H / 25K</span><span class="f op">Judy: FPML fruit platter</span></div>
-        </div>
-        <div class="node endpoint"><div class="station"><div class="code">CNX</div><div class="meta"><div class="city">Chiang Mai</div><div class="term">Arrival</div></div><div class="time"><b>10:25</b><small>Thu 3 Sep</small></div><span class="tag">+1 day</span></div></div>
-      </div>
-    </div>
+    <a class="tile t-money" href="money.html" aria-label="Money">
+      <div class="motif"></div>
+      <div class="name">Money</div>
+    </a>
 
-    <!-- RETURN -->
-    <div class="journey">
-      <div class="j-head">
-        <div class="j-title">
-          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 19l-7 2-4-9-1 .3 1.5 8.2-5-1.4-.5 1.6 6 2.2 3 4 1-.3-1.3-3.1L19 18z" fill="currentColor"/></svg></div>
-          <div><h3>Return</h3><div class="date">Wed 9 Sep 2026</div></div>
-        </div>
-        <div class="j-total">Total journey<b>20h 50m</b></div>
-      </div>
-      <div class="timeline">
-        <div class="node endpoint"><div class="station"><div class="code">CNX</div><div class="meta"><div class="city">Chiang Mai</div><div class="term">Departure</div></div><div class="time"><b>11:35</b><small>Wed 9 Sep</small></div></div></div>
-        <div class="leg">
-          <div class="leg-top"><div class="leg-flt"><span class="no">BR 258</span><span class="craft">Aircraft TBC</span></div><span class="cabin">Economy</span></div>
-          <div class="leg-body">
-            <div class="ep"><div class="c">CNX</div><div class="t">11:35</div><div class="d">Wed 9 Sep</div></div>
-            <div class="leg-mid"><div class="dur">3h 50m</div><div class="track"><span class="ln"></span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg><span class="ln"></span></div></div>
-            <div class="ep to"><div class="c">TPE</div><div class="t">16:25</div><div class="d">Wed 9 Sep</div></div>
-          </div>
-          <div class="leg-foot"><span class="f"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9V2H9v7a3 3 0 0 0 2 2.83V22h2V11.83A3 3 0 0 0 15 9V2h-2v7zM18 2v20h2V14h2V7a5 5 0 0 0-4-5z"/></svg>Meal included</span><span class="f">Seats 25H / 25K</span><span class="f">Class Y</span></div>
-        </div>
-        <div class="node layover"><div class="lay-card">
-          <div class="lay-head"><div class="ttl"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Layover · Taipei Taoyuan</div><div class="gap">3h 15m</div></div>
-          <div class="lay-times">Arrive 16:25 → depart 19:40 · Terminal 2</div>
-          <div class="lay-note info"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 2 7v7c0 5 4 8 10 8s10-3 10-8V7z" opacity=".25"/><path d="M11 16V9l-3 2v-1l4-3 4 3v1l-3-2v7z"/></svg><span><b>Comfortable stretch.</b> Same terminal both directions — a proper meal and a walk before the transpacific leg.</span></div>
-        </div></div>
-        <div class="leg">
-          <div class="leg-top"><div class="leg-flt"><span class="no">BR 50</span><span class="craft">Aircraft TBC</span></div><span class="cabin">Premium Economy</span></div>
-          <div class="leg-body">
-            <div class="ep"><div class="c">TPE</div><div class="t">19:40</div><div class="d">Wed 9 Sep</div></div>
-            <div class="leg-mid"><div class="dur">13h 45m</div><div class="track"><span class="ln"></span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg><span class="ln"></span></div></div>
-            <div class="ep to"><div class="c">DFW</div><div class="t">20:25</div><div class="d">Wed 9 Sep</div></div>
-          </div>
-          <div class="leg-foot"><span class="f"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9V2H9v7a3 3 0 0 0 2 2.83V22h2V11.83A3 3 0 0 0 15 9V2h-2v7zM18 2v20h2V14h2V7a5 5 0 0 0-4-5z"/></svg>Meal included</span><span class="f">Seats 22H / 22K</span><span class="f">Class T</span></div>
-        </div>
-        <div class="node endpoint"><div class="station"><div class="code">DFW</div><div class="meta"><div class="city">Dallas / Fort Worth</div><div class="term">Terminal D · Home</div></div><div class="time"><b>20:25</b><small>Wed 9 Sep</small></div><span class="tag">same day</span></div></div>
-      </div>
-    </div>
+    <a class="tile t-food" href="food.html" aria-label="Food and Coffee">
+      <div class="motif"></div>
+      <div class="name">Food<em>&amp; Coffee</em></div>
+    </a>
 
-    <div class="gtk">
-      <h4><span class="d"></span>Good to know</h4>
-      <ul>
-        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><b>You land the same day you leave.</b> BR 50 departs Taipei 19:40 and arrives Dallas 20:25 on the same Wed 9 Sep — 13h 45m in the air, only 45 minutes on the clock. That's the date line, not an error.</span></li>
-        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 9l7-7 7 7"/></svg></span><span><b>Premium Economy is transpacific only.</b> Cabin T applies to BR 49 and BR 50; the TPE ⇄ CNX regional hops (BR 257 / BR 258) are Economy Y.</span></li>
-        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2 12h20v2H2zm2 4h16v2H4zM6 4h12l2 6H4z"/></svg></span><span><b>Baggage confirmed on ticket.</b> 2 × 23 kg checked each direction, plus 7 kg carry-on (56 × 36 × 23 cm) and a 40 × 30 × 10 cm personal item.</span></li>
-        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16v13H4zM8 3v4M16 3v4M4 11h16"/></svg></span><span><b>Check in ≥ 1 hour before departure</b> (EVA rule for international). Two to three hours is the sensible target — DFW Terminal D and TPE T2 are both busy at peak.</span></li>
-        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></span><span><b>Tickets:</b> Bruce <b>695 2465637460</b> · Judy <b>695 2465637461</b> · Infinity MileageLands 118121995. Aircraft types are not shown on the e-ticket — <b>TBC</b>.</span></li>
-      </ul>
-    </div>
-  </section>
+    <a class="tile t-cooking" href="cooking.html" aria-label="Cooking">
+      <div class="motif"></div>
+      <div class="name">Cooking<em>Schools</em></div>
+    </a>
 
-  <!-- ===================== ACCOMMODATION ===================== -->
-  <section id="stay" class="block">
-    <div class="s-head">
-      <div class="ico">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V9l9-5 9 5v11"/><path d="M3 20h18"/><path d="M9 20v-6h6v6"/></svg>
-      </div>
-      <div><h2>Accommodation</h2><div class="sub">6 nights · Chang Khlan</div></div>
-    </div>
-    <div class="crumb">Where we're staying · confirmed &amp; paid</div>
+    <a class="tile t-markets" href="markets.html" aria-label="Markets">
+      <div class="motif"></div>
+      <div class="name">Night<em>Markets</em></div>
+    </a>
 
-    <div class="w-hero">
-      <div class="w-eyebrow">Home base in Chiang Mai</div>
-      <div class="w-names" style="font-size:34px;line-height:1.05;">InterContinental<br><span class="w-amp">·</span> The Mae Ping</div>
-      <div class="w-rule"><span class="l"></span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 20V9l9-5 9 5v11"/><path d="M3 20h18"/></svg><span class="l"></span></div>
-      <div class="w-date"><b>Thu 3 Sep → Wed 9 Sep 2026</b></div>
-    </div>
+    <a class="tile t-temples" href="temples.html" aria-label="Temples">
+      <div class="motif"></div>
+      <div class="name">Temples<em>&amp; Chedis</em></div>
+    </a>
 
-    <div class="w-details">
-      <div class="w-row">
-        <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16v13H4zM8 3v4M16 3v4M4 11h16"/></svg></div>
-        <div>
-          <div class="lab">Stay</div>
-          <div class="val"><span class="nm">6 nights · Classic Room, King, Mountain View</span></div>
-          <div class="sm">Check-in Thu 3 Sep · Check-out Wed 9 Sep · Main guest: Bruce Macmillan</div>
-        </div>
-      </div>
+    <a class="tile t-hikes" href="hikes.html" aria-label="Hikes">
+      <div class="motif"></div>
+      <div class="name">Hikes<em>&amp; Waterfalls</em></div>
+    </a>
 
-      <div class="w-row">
-        <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-        <div>
-          <div class="lab">Address</div>
-          <div class="val"><span class="nm">153 Sridonchai Road</span></div>
-          <div class="sm">Chang Klan, Chiang Mai 50110, Thailand · +66 52 090 998<br>Central location between the Old City and the Riverside, anchoring the Night Bazaar strip.</div>
-          <a class="maps-btn" href="https://maps.google.com/?q=InterContinental+Chiang+Mai+The+Mae+Ping" target="_blank" rel="noopener">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-            Open in Maps
-          </a>
-        </div>
-      </div>
+    <a class="tile wide t-elephants" href="elephants.html" aria-label="Elephants">
+      <div class="motif"></div>
+      <div class="name">Elephants<em>Ethical sanctuaries</em></div>
+    </a>
 
-      <div class="w-row">
-        <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M4 10h16"/><circle cx="8" cy="14" r="1.2"/></svg></div>
-        <div>
-          <div class="lab">Confirmation</div>
-          <div class="val"><span class="nm">ZO-AX1069-61065</span></div>
-          <div class="sm">Amex Travel booking · Hotel confirmation <b>64382127</b><br>Booked through Amex Travel · The Hotel Collection (5× Membership Rewards).</div>
-        </div>
-      </div>
+  </main>
 
-      <div class="w-row">
-        <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M8 7h6a3 3 0 1 1 0 6H8m0 0h6a3 3 0 1 1 0 6H8"/></svg></div>
-        <div>
-          <div class="lab">Paid in full</div>
-          <div class="val"><span class="nm">USD 1,262.96</span></div>
-          <div class="sm">~USD 166.50/night avg excl. taxes · <b>$0 due at hotel</b></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="gtk">
-      <h4><span class="d"></span>Hotel Collection benefits</h4>
-      <ul>
-        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M8 7h6a3 3 0 1 1 0 6H8m0 0h6a3 3 0 1 1 0 6H8"/></svg></span><span><b>USD 100 property credit</b> toward eligible on-property charges — spa, dining, or minibar.</span></li>
-        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v6a6 6 0 0 0 12 0V3M8 21h8"/></svg></span><span><b>Daily breakfast for two</b> included (valued ≥ USD 60/room/day).</span></li>
-        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M3 17h2m4 0h6M5 17V9h9l4 4v4"/></svg></span><span><b>Complimentary valet and self-parking</b>, one vehicle.</span></li>
-        <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>12 pm early check-in · room upgrade · 4 pm late check-out</b> — each subject to availability.</span></li>
-      </ul>
-    </div>
-
-    <div class="w-note">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 2 7v7c0 5 4 8 10 8s10-3 10-8V7z" opacity=".2"/><path d="M11 16V9l-3 2v-1l4-3 4 3v1l-3-2v7z"/></svg>
-      <p><b>Arrival day (Thu 3 Sep).</b> Land 10:25, at the hotel ~11:00 — <b>request the 12 pm early check-in ahead of time</b>. Standard check-in is 3 pm; after an overnight transpacific flight, those hours matter.</p>
-    </div>
-
-    <div class="callout rain" style="margin-top:12px;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-      <div><div class="ttl">Departure day (Wed 9 Sep) is a half-day</div><p>BR 258 leaves CNX at 11:35, so checkout is around <b>08:30</b> for a 09:00–09:30 airport arrival. The 4 pm late checkout benefit isn't usable — plan the last morning accordingly.</p></div>
-    </div>
-  </section>
-
-  <!-- ===================== WEDDING ===================== -->
-  <section id="wedding" class="block">
-    <div class="s-head">
-      <div class="ico">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="14" r="5"/><circle cx="16" cy="14" r="5"/><path d="M8 9l2-5h4l2 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div><h2>Wedding Day</h2><div class="sub">Why we're all here</div></div>
-    </div>
-    <div class="crumb">The celebration</div>
-
-    <div class="w-hero">
-      <div class="w-eyebrow">Join us in celebrating</div>
-      <div class="w-names">Mercy <span class="w-amp">&amp;</span> Max</div>
-      <div class="w-rule"><span class="l"></span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg><span class="l"></span></div>
-      <div class="w-date"><b>Saturday · 5 September 2026</b></div>
-    </div>
-
-    <div class="w-details">
-      <div class="w-row">
-        <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <div>
-          <div class="lab">Schedule</div>
-          <div class="val"><span class="nm">Ceremony 3:00 pm</span></div>
-          <div class="sm">Reception with a traditional Chinese-Thai dinner to follow, catered by close friends of the family.</div>
-        </div>
-      </div>
-
-      <div class="w-row">
-        <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-        <div>
-          <div class="lab">Venue</div>
-          <div class="val"><span class="nm">Acts Church of Chiang Mai</span></div>
-          <div class="sm">206 Moo 1, Baan Nae Kha Noi Kaimook Soi 4, Pa Daet, Mueang, Chiang Mai 50100</div>
-          <a class="maps-btn" href="https://maps.app.goo.gl/4HEagNGvcpJci7rQ7?g_st=ic" target="_blank" rel="noopener">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-            Open in Maps
-          </a>
-        </div>
-      </div>
-
-      <div class="w-row">
-        <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v7a3 3 0 0 0 6 0V2M9 9v13M18 2c-1.5 0-2.5 2-2.5 5s1 4 2.5 4v11"/></svg></div>
-        <div>
-          <div class="lab">Attire</div>
-          <div class="val">Semi-formal</div>
-          <div class="sm">Suit jackets for the men; midi-length dresses are ideal. Covered shoulders and knees read as polite — in Thai culture, modest and well-mannered are the same idea.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="w-note">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.9H22l-5.8 4.3 2.2 7L12 16l-6.4 4.2 2.2-7L2 8.9h7.6z"/></svg>
-      <p><b>A quiet coincidence woven through this guide:</b> in Thai tradition each weekday carries a colour, and Saturday's is purple. The violet running through these pages quietly honours the day.</p>
-    </div>
-  </section>
-
-  <!-- ===================== HEALTH ===================== -->
-  <section id="health" class="block">
-    <div class="s-head">
-      <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2h2v6h6v2h-6v12h-2V10H5V8h6z"/></svg></div>
-      <div><h2>Health &amp; Vaccinations</h2><div class="sub">Chiang Mai · September</div></div>
-    </div>
-    <div class="crumb">Before you go</div>
-
-    <div class="reassure">
-      <div class="chk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-      <div><b>Nothing required to enter</b><p>No mandatory vaccines for arrivals from the US. Yellow fever proof is only needed if arriving from a risk country in Africa or South America — your route doesn't apply.</p></div>
-    </div>
-
-    <div class="card">
-      <div class="lbl"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12z"/></svg>Recommended</div>
-      <div class="vx">
-        <div class="vrow"><span class="pip core"></span><span class="nm">Routine, up to date</span><span class="nt">— MMR / measles, Tdap, polio</span></div>
-        <div class="vrow"><span class="pip core"></span><span class="nm">Hepatitis A</span><span class="nt">— advised for most travelers</span></div>
-        <div class="vrow"><span class="pip opt"></span><span class="nm">Typhoid</span><span class="nt">— lots of street food / longer stay</span></div>
-        <div class="vrow"><span class="pip opt"></span><span class="nm">Hep B · Rabies · JE</span><span class="nt">— activity-dependent</span></div>
-      </div>
-      <div class="vlegend"><span><span class="pip core"></span>Worth confirming</span><span><span class="pip opt"></span>Situational</span></div>
-    </div>
-
-    <div class="callout rain">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 16a4 4 0 0 1-.5-8 5.5 5.5 0 0 1 10.6-1A3.5 3.5 0 0 1 17 16"/><path d="M8 19l-1 2M12 19l-1 2M16 19l-1 2"/></svg>
-      <div><div class="ttl">Rainy season → mosquitoes</div><p>September is green season. <b>Dengue</b> is the main concern and has no traveler's prophylaxis, so bite prevention is the defense — DEET or picaridin repellent, day and evening, since the mosquito bites in daylight too.</p></div>
-    </div>
-
-    <div class="callout malaria">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2v3M12 22c-4-4-7-7.5-7-12a7 7 0 0 1 14 0c0 4.5-3 8-7 12z"/></svg>
-      <div><div class="ttl">Malaria — not a city concern</div><p>Risk sits in remote border provinces, not Chiang Mai city or the usual sights. Antimalarials generally aren't advised unless you add rural border trekking.</p></div>
-    </div>
-
-    <div class="action">
-      <div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-      <div><b>One travel-clinic visit</b><p><span class="lead">6–8 weeks before you fly</span> lets multi-dose vaccines take full effect. Departing early September from a June start, you have comfortable lead time.</p></div>
-    </div>
-
-    <p class="disc"><b>General guidance, not personal medical advice.</b> A travel-medicine clinic can tailor this to each traveler's history and plans. Sources: CDC &amp; WHO travelers' health.</p>
-  </section>
-
-  <footer>
-    <div class="b">Chiang Mai · September 2026</div>
-    Flight times shown in local time at each airport.<br>
-    EVA Air PNR <b>E2AQBT</b> · InterContinental confirmation <b>64382127</b> · Both confirmed &amp; paid.
-  </footer>
-
-</div>
 </body>
 </html>
