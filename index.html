@@ -209,17 +209,19 @@
   .t-hikes .name em{color:#C9E1D8;}
 
   /* ============================================================
-     TILE 9 — ELEPHANTS (WIDE)   earth + jungle + elephant
+     TILE 9 — SPAS (WIDE)   dusty teal + lotus + steam
   ============================================================ */
-  .t-elephants{background:linear-gradient(100deg,#8a6a4a 0%,#5A3D2B 45%,#3A5E48 100%);color:#F5EBD3;}
-  .t-elephants .motif{
-    background-image:url("assets/elephant.svg");
-    background-size:auto 88%;
-    background-position:right 18px center;
-    background-repeat:no-repeat;
+  .t-spas{background:linear-gradient(105deg,#8FB7B0 0%,#5C8A85 55%,#3E635E 100%);color:#F5EBDD;}
+  .t-spas .motif{
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' fill='none' stroke='%23F5EBDD' stroke-width='1.4' stroke-linecap='round' stroke-opacity='.55'><path d='M 130 8 Q 124 22 132 34 Q 140 46 132 58'/><path d='M 158 4 Q 152 18 160 30 Q 168 42 160 54'/><path d='M 186 10 Q 180 24 188 36 Q 196 48 188 60'/></svg>"),
+      url("assets/lotus.svg");
+    background-size:auto 90%, auto 62%;
+    background-position:right 12px center, right 22px center;
+    background-repeat:no-repeat, no-repeat;
   }
-  .t-elephants .name{color:#FFF;}
-  .t-elephants .name em{color:#F4B740;font-style:italic;}
+  .t-spas .name{color:#FFF;}
+  .t-spas .name em{color:#F0DFB2;font-style:italic;}
 
   @media (max-width:360px){
     .tile{border-radius:18px;}
@@ -272,9 +274,9 @@
       <div class="name">Hikes<em>&amp; Waterfalls</em></div>
     </a>
 
-    <a class="tile wide t-elephants" href="elephants.html" aria-label="Elephants">
+    <a class="tile wide t-spas" href="spas.html" aria-label="Spas">
       <div class="motif"></div>
-      <div class="name">Elephants<em>Ethical sanctuaries</em></div>
+      <div class="name">Spas<em>Lanna wellness</em></div>
     </a>
 
   </main>

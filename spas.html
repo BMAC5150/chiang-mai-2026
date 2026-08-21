@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#5C8A85">
+<title>Spas · Chiang Mai 2026</title>
+<meta name="description" content="Chiang Mai day spa & Lanna wellness guide — from the in-hotel ii Spa to old-city teak mansions, walk-in neighborhood shops, and traditional Lanna treatments.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,30..100;1,9..144,400..600,30..100&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --violet:#8B7EC8; --violet-deep:#5D4E8C; --aubergine:#3E3460;
+    --lav-bg:#F4F1FA; --lav-card:#FFFFFF; --lav-tint:#EFEAFA;
+    --ink:#2E2A3A; --muted:#8A7FA8; --line:#DAD2EC;
+    --teal:#5C8A85; --teal-deep:#3E635E; --teal-soft:#C7DAD7; --teal-tint:#E6EFED;
+    --gold:#C9A24B; --gold-deep:#A8842E; --gold-soft:#E6D2A0; --gold-tint:#F5ECD0;
+    --blush:#C58B7B; --blush-deep:#A56656; --blush-soft:#EBCEC4; --blush-tint:#F7E8E2;
+    --teak:#5B3A1F; --cream:#F5EBDD;
+    --shadow:0 10px 30px -12px rgba(62,99,94,.32);
+    --shadow-sm:0 4px 14px -6px rgba(62,99,94,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{
+    font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--ink);background:var(--lav-bg);
+    background-image:
+      radial-gradient(120% 60% at 85% -5%, rgba(92,138,133,.26), transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, rgba(201,162,75,.12), transparent 55%),
+      radial-gradient(80% 60% at 50% 110%, rgba(62,99,94,.20), transparent 60%);
+    background-attachment:fixed;line-height:1.5;-webkit-font-smoothing:antialiased;
+    padding:0 0 56px;position:relative;
+    font-feature-settings:"kern","liga","calt","ss01";
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.42;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .18  0 0 0 0 .32  0 0 0 0 .28  0 0 0 .06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  /* Water ripple motif */
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.07;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500' fill='none' stroke='%233E635E' stroke-width='.5'><g transform='translate(250 250)'><circle r='60'/><circle r='100'/><circle r='140'/><circle r='180'/><circle r='220'/></g></svg>");
+    background-size:500px 500px;
+  }
+  .wrap, header, section, nav, footer{position:relative;z-index:2;}
+  .wrap{max-width:460px;margin:0 auto;padding:0 20px;}
+  section{scroll-margin-top:64px;}
+
+  .back{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--violet-deep);text-decoration:none;padding:6px 12px;border-radius:100px;background:rgba(255,255,255,.6);border:1px solid var(--line);margin:20px 0 0;}
+  .back:hover{color:var(--teal-deep);border-color:var(--teal-soft);}
+
+  header{padding:20px 0 18px;text-align:center;position:relative;}
+  /* Lotus behind title */
+  header::before{
+    content:"";position:absolute;left:50%;top:12px;width:260px;height:200px;transform:translateX(-50%);
+    pointer-events:none;opacity:.14;z-index:-1;
+    background:url("assets/lotus.svg") center/contain no-repeat;
+    filter:hue-rotate(120deg) brightness(.6) saturate(1.4);
+  }
+  .kicker{font-size:10.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--teal-deep);font-weight:600;display:inline-flex;align-items:center;gap:12px;padding-left:.42em;}
+  .kicker::before,.kicker::after{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--gold) 50%,transparent);display:inline-block;}
+  h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:44px;line-height:1.0;letter-spacing:-.022em;color:var(--aubergine);margin:16px 0 8px;font-variation-settings:"opsz" 144,"SOFT" 60;}
+  h1 em{font-style:italic;color:var(--teal-deep);font-variation-settings:"opsz" 144,"SOFT" 100;letter-spacing:-.012em;}
+  .subhead{color:var(--muted);font-size:14px;font-weight:500;font-style:italic;font-family:'Fraunces',serif;font-variation-settings:"opsz" 14,"SOFT" 80;max-width:340px;margin:0 auto;}
+
+  .nav{position:sticky;top:0;z-index:20;margin:18px -20px 0;padding:11px 20px;
+    background:rgba(244,241,250,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(218,210,236,.7);display:flex;gap:9px;
+    overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%);
+            mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%);}
+  .nav::-webkit-scrollbar{display:none;}
+  .nav a{font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--violet-deep);text-decoration:none;padding:8px 16px;border-radius:100px;background:#fff;border:1px solid var(--line);flex:none;white-space:nowrap;transition:.2s;}
+  .nav a:hover{border-color:var(--teal);color:var(--teal-deep);}
+
+  .s-head{display:flex;align-items:center;gap:11px;margin-bottom:5px;}
+  .s-head .ico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;flex:none;background:linear-gradient(155deg,var(--teal),var(--teal-deep));color:#fff;box-shadow:var(--shadow-sm),inset 0 0 0 1px rgba(255,255,255,.18);}
+  .s-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;color:var(--aubergine);line-height:1;letter-spacing:-.015em;font-variation-settings:"opsz" 96,"SOFT" 50;}
+  .s-head .sub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-deep);font-weight:600;margin-top:5px;}
+  .crumb{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin:0 0 16px 49px;display:flex;align-items:center;gap:9px;}
+  .crumb::before{content:"";width:14px;height:1px;background:linear-gradient(90deg,transparent,var(--gold));}
+  .crumb::after{content:"❉";font-size:8px;color:var(--gold-soft);}
+  .block{margin-top:34px;animation:rise .7s cubic-bezier(.2,.7,.2,1) both;}
+
+  /* ---------- Tiers matrix ---------- */
+  .tiers{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
+  .tier{background:var(--lav-card);border:1px solid rgba(218,210,236,.7);border-radius:14px;box-shadow:var(--shadow-sm);padding:14px 16px;position:relative;overflow:hidden;}
+  .tier::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;}
+  .tier.lux::before{background:linear-gradient(var(--gold),var(--gold-deep));}
+  .tier.mid::before{background:linear-gradient(var(--teal),var(--teal-deep));}
+  .tier.hood::before{background:linear-gradient(var(--blush),var(--blush-deep));}
+  .tier-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:6px;}
+  .tier-name{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--aubergine);letter-spacing:-.005em;font-variation-settings:"opsz" 48,"SOFT" 70;line-height:1.15;}
+  .tier-name em{font-style:italic;font-weight:500;}
+  .tier.lux .tier-name em{color:var(--gold-deep);}
+  .tier.mid .tier-name em{color:var(--teal-deep);}
+  .tier.hood .tier-name em{color:var(--blush-deep);}
+  .tier-price{font-family:'Fraunces',serif;font-weight:600;font-size:13.5px;color:var(--aubergine);white-space:nowrap;font-variation-settings:"opsz" 24;}
+  .tier-price small{font-size:10.5px;color:var(--muted);font-weight:500;font-style:italic;font-family:'Fraunces',serif;display:block;margin-top:1px;}
+  .tier-desc{font-size:12.5px;line-height:1.5;color:var(--ink);}
+  .tier-desc b{font-weight:700;}
+  .tier.lux .tier-desc b{color:var(--gold-deep);}
+  .tier.mid .tier-desc b{color:var(--teal-deep);}
+  .tier.hood .tier-desc b{color:var(--blush-deep);}
+  .tier-best{margin-top:6px;font-size:11px;letter-spacing:.06em;color:var(--muted);font-weight:600;}
+  .tier-best b{color:var(--aubergine);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:10px;}
+
+  /* ---------- Spa card (used across sections) ---------- */
+  .spa{background:var(--lav-card);border:1px solid rgba(218,210,236,.7);border-radius:16px;box-shadow:var(--shadow-sm);padding:16px 17px;margin-top:12px;position:relative;overflow:hidden;}
+  .spa::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--teal),var(--teal-deep));}
+  .spa.gold::before{background:linear-gradient(var(--gold),var(--gold-deep));}
+  .spa.blush::before{background:linear-gradient(var(--blush),var(--blush-deep));}
+  .spa-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:6px;}
+  .spa-name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--aubergine);letter-spacing:-.012em;line-height:1.15;font-variation-settings:"opsz" 48,"SOFT" 60;}
+  .spa-name em{font-style:italic;font-weight:500;color:var(--teal-deep);}
+  .spa.gold .spa-name em{color:var(--gold-deep);}
+  .spa.blush .spa-name em{color:var(--blush-deep);}
+  .spa-tag{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:5px;flex:none;white-space:nowrap;background:var(--teal-tint);color:var(--teal-deep);border:1px solid var(--teal-soft);}
+  .spa-tag.gold{background:var(--gold-tint);color:var(--gold-deep);border-color:var(--gold-soft);}
+  .spa-tag.blush{background:var(--blush-tint);color:var(--blush-deep);border-color:var(--blush-soft);}
+  .loc{font-size:11.5px;color:var(--muted);font-weight:600;letter-spacing:.02em;display:inline-flex;align-items:center;gap:5px;margin-bottom:8px;}
+  .loc svg{color:var(--gold);flex:none;}
+  .spa-desc{font-size:12.5px;line-height:1.55;color:var(--ink);}
+  .spa-desc b{color:var(--teal-deep);font-weight:700;}
+  .spa.gold .spa-desc b{color:var(--gold-deep);}
+  .spa.blush .spa-desc b{color:var(--blush-deep);}
+  .spa-desc + .spa-desc{margin-top:6px;}
+  .spa-desc .accent{font-family:'Fraunces',serif;font-style:italic;color:var(--teal-deep);font-weight:600;font-variation-settings:"opsz" 24,"SOFT" 90;}
+  .spa.gold .spa-desc .accent{color:var(--gold-deep);}
+  .spa.blush .spa-desc .accent{color:var(--blush-deep);}
+  .spa-note{margin-top:10px;padding:9px 12px;background:var(--gold-tint);border:1px dashed var(--gold-soft);border-radius:9px;font-size:11.5px;line-height:1.45;color:#5f4a14;display:flex;gap:8px;align-items:flex-start;}
+  .spa-note svg{flex:none;color:var(--gold-deep);margin-top:1px;}
+  .spa-note b{color:var(--aubergine);}
+
+  /* ---------- ii Spa hero card ---------- */
+  .ii{margin-top:16px;background:linear-gradient(160deg,#3E3460 0%,#2C2547 55%,#1E1936 100%);color:#F4EAD1;border-radius:20px;padding:22px 22px 20px;box-shadow:var(--shadow),inset 0 0 0 1px rgba(201,162,75,.22);position:relative;overflow:hidden;}
+  .ii::before{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,.35),transparent 65%);}
+  .ii::after{content:"";position:absolute;left:-30px;bottom:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(92,138,133,.35),transparent 65%);}
+  .ii-award{display:inline-flex;align-items:center;gap:7px;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--gold-soft);border:1px solid rgba(230,210,160,.4);padding:5px 10px;border-radius:100px;margin-bottom:14px;position:relative;}
+  .ii-award .d{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.28);}
+  .ii-name{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:32px;color:#fff;letter-spacing:-.018em;line-height:1.02;margin-bottom:8px;font-variation-settings:"opsz" 144,"SOFT" 100;position:relative;}
+  .ii-name b{font-style:normal;font-weight:600;font-variation-settings:"opsz" 144,"SOFT" 60;}
+  .ii-lede{font-size:12.5px;line-height:1.55;color:#e8dcc3;position:relative;}
+  .ii-lede b{color:#fff;font-weight:600;}
+  .ii-lede em{font-style:italic;color:var(--gold-soft);font-family:'Fraunces',serif;font-variation-settings:"opsz" 24,"SOFT" 90;}
+  .ii-meta{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative;}
+  .ii-meta .m{background:rgba(255,255,255,.06);border:1px solid rgba(230,210,160,.22);border-radius:10px;padding:9px 11px;}
+  .ii-meta .lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);font-weight:700;margin-bottom:2px;}
+  .ii-meta .val{font-size:12.5px;color:#fff;font-weight:600;line-height:1.35;}
+  .ii-treat{margin-top:14px;position:relative;}
+  .ii-treat h5{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:15px;color:var(--gold-soft);display:flex;align-items:center;gap:8px;margin-bottom:10px;font-variation-settings:"opsz" 24,"SOFT" 90;}
+  .ii-treat h5::before{content:"";width:16px;height:1px;background:var(--gold-soft);opacity:.7;}
+  .ii-t{background:rgba(255,255,255,.05);border:1px solid rgba(230,210,160,.18);border-radius:11px;padding:11px 13px;margin-top:8px;}
+  .ii-t .tt{font-family:'Fraunces',serif;font-weight:600;font-size:14px;color:#fff;letter-spacing:-.005em;line-height:1.2;font-variation-settings:"opsz" 24,"SOFT" 70;}
+  .ii-t .tt em{font-style:italic;color:var(--gold-soft);font-weight:500;}
+  .ii-t .td{font-size:11.5px;line-height:1.5;color:#d9cfae;margin-top:4px;}
+  .ii-t .td b{color:#fff;}
+  .ii-extras{margin-top:12px;padding:11px 13px;background:rgba(0,0,0,.22);border-left:3px solid var(--gold-soft);border-radius:6px;font-size:11.5px;line-height:1.5;color:#d9cfae;position:relative;}
+  .ii-extras b{color:#fff;font-weight:600;}
+  .ii-price{font-family:'Fraunces',serif;font-weight:600;color:var(--gold-soft);font-variation-settings:"opsz" 24;}
+  .ii-book{margin-top:12px;padding:10px 12px;background:rgba(201,162,75,.14);border:1px solid rgba(201,162,75,.32);border-radius:10px;font-size:11.5px;line-height:1.5;color:#f0e2b8;position:relative;}
+  .ii-book b{color:#fff;}
+  .ii-book a{color:var(--gold-soft);text-decoration:underline;text-underline-offset:2px;}
+
+  /* ---------- Treatment card ---------- */
+  .treat{background:var(--lav-card);border:1px solid rgba(218,210,236,.7);border-radius:14px;box-shadow:var(--shadow-sm);padding:14px 16px;margin-top:11px;position:relative;overflow:hidden;}
+  .treat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--teak),#8a5a2f);}
+  .treat-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px;}
+  .treat-name{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--aubergine);letter-spacing:-.008em;line-height:1.15;font-variation-settings:"opsz" 36,"SOFT" 70;}
+  .treat-name em{font-style:italic;color:var(--teak);font-weight:500;}
+  .treat-thai{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;font-family:'Fraunces',serif;font-style:italic;font-variation-settings:"opsz" 14,"SOFT" 100;}
+  .treat-desc{font-size:12.5px;line-height:1.55;color:var(--ink);}
+  .treat-desc b{color:var(--teak);font-weight:700;}
+
+  /* ---------- Etiquette panel ---------- */
+  .etiquette{margin-top:14px;background:var(--aubergine);color:#efeafa;border-radius:18px;padding:22px;box-shadow:var(--shadow),inset 0 0 0 1px rgba(201,162,75,.20);position:relative;overflow:hidden;}
+  .etiquette::before{content:"";position:absolute;right:-30px;top:-30px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(92,138,133,.42),transparent 65%);}
+  .etiquette::after{content:"";position:absolute;left:-30px;bottom:-30px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,.24),transparent 65%);}
+  .etiquette h4{font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:19px;color:#fff;display:flex;align-items:center;gap:10px;margin-bottom:14px;letter-spacing:-.01em;font-variation-settings:"opsz" 48,"SOFT" 90;position:relative;}
+  .etiquette h4 .d{width:7px;height:7px;border-radius:50%;background:var(--teal-soft);box-shadow:0 0 0 3px rgba(199,218,215,.22);}
+  .etiquette ul{list-style:none;display:flex;flex-direction:column;gap:12px;position:relative;}
+  .etiquette li{display:flex;gap:11px;font-size:12.5px;line-height:1.5;color:#e0d9ee;}
+  .etiquette li b{color:#fff;font-weight:600;}
+  .etiquette li em{font-style:italic;color:var(--gold-soft);font-family:'Fraunces',serif;font-variation-settings:"opsz" 24,"SOFT" 90;font-weight:600;}
+  .etiquette li .ic{flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:rgba(92,138,133,.28);color:var(--teal-soft);margin-top:1px;}
+
+  .lede{font-size:13px;line-height:1.55;color:var(--muted);margin:2px 0 4px 0;padding-left:2px;}
+  .lede b{color:var(--aubergine);font-weight:700;}
+
+  footer{text-align:center;margin-top:44px;font-size:11px;color:var(--muted);line-height:1.7;position:relative;padding-top:28px;}
+  footer::after{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:140px;height:1px;background:linear-gradient(90deg,transparent,var(--teal-soft) 25%,var(--teal-soft) 75%,transparent);opacity:.8;}
+  footer::before{content:"❉";position:absolute;top:0;left:50%;transform:translateX(-50%);color:var(--teal);font-size:13px;opacity:.9;background:var(--lav-bg);padding:0 8px;line-height:1.2;z-index:1;}
+  footer .b{font-family:'Fraunces',serif;color:var(--teal-deep);font-weight:600;font-style:italic;font-size:13px;font-variation-settings:"opsz" 24,"SOFT" 80;display:block;margin-bottom:4px;}
+
+  @keyframes rise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @media (max-width:360px){h1{font-size:36px;}.ii-name{font-size:26px;}.ii-meta{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="index.html">← HOME PAGE</a>
+
+  <header>
+    <div class="kicker">Rest &amp; Restore</div>
+    <h1>Spas</h1>
+    <div class="subhead">Lanna wellness — from the ii Spa in your lobby to teak-mansion sanctuaries and old-city walk-ins.</div>
+  </header>
+
+  <nav class="nav">
+    <a href="#ii">ii Spa</a>
+    <a href="#tiers">Tiers</a>
+    <a href="#luxury">Luxury</a>
+    <a href="#mid">Mid-range</a>
+    <a href="#hood">Neighborhood</a>
+    <a href="#treatments">Treatments</a>
+    <a href="#etiquette">Etiquette</a>
+  </nav>
+
+  <!-- II SPA -->
+  <section id="ii" class="block">
+    <div class="s-head">
+      <div class="ico"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V9l9-5 9 5v11"/><path d="M3 20h18"/><path d="M9 20v-6h6v6"/></svg></div>
+      <div><h2>In the Intercontinental Hotel</h2><div class="sub">The ii Spa</div></div>
+    </div>
+    <div class="crumb">World Luxury Spa Awards 2025</div>
+
+    <div class="ii">
+      <div class="ii-award"><span class="d"></span>Best Unique Experience · 2025</div>
+      <div class="ii-name">The <b>ii</b> Spa</div>
+      <p class="ii-lede">Drawing on the healing traditions of the Lanna Kingdom and the ancient <em>Hong Mor Muang</em> — the medical repository where northern healing wisdom was preserved. On arrival, a traditional <b>flower cone</b> and herbal drink transition you into rest. Five private treatment rooms, each named for a Lanna flower.</p>
+
+      <div class="ii-meta">
+        <div class="m"><div class="lbl">Where</div><div class="val">1F, InterContinental Mae Ping · 153 Sridonchai Rd</div></div>
+        <div class="m"><div class="lbl">Hours</div><div class="val">Daily · 10:00 am – 10:00 pm</div></div>
+      </div>
+
+      <div class="ii-treat">
+        <h5>Signature treatments</h5>
+        <div class="ii-t">
+          <div class="tt">Lanna <em>Signature Massage</em></div>
+          <p class="td">Warm <b>herbal compresses</b>, custom-blended essential oils, and rhythmic Lanna <b>Tok Sen</b> wood-tapping to release deep muscle tension.</p>
+        </div>
+        <div class="ii-t">
+          <div class="tt">Lanna <em>Blessing Massage</em></div>
+          <p class="td">Inspired by the sacred <b>Phang Prathip</b> candle-lighting ritual — flowing continuous strokes restoring energetic balance to body and mind.</p>
+        </div>
+      </div>
+
+      <div class="ii-extras">
+        Also on menu · <b>Golden &amp; Glow Body Wrap</b> (30–45 min), <b>Golden Facial</b> (30–60 min), and multi-treatment rituals like the <span class="ii-price">Lanna Journey</span> or <span class="ii-price">Pampering Package</span> (2 h 30 m · ~฿3,900++). <em style="font-style:italic;color:#c9b78a;">10% service + 7% VAT added.</em>
+      </div>
+
+      <div class="ii-book">
+        <b>Book ahead.</b> Front desk <a href="tel:+66520909998">+66 52 090 998</a> · <a href="mailto:chiangmai@ihg.com">chiangmai@ihg.com</a> · or the 1F spa reception. Min age 16. <b>4-hr cancellation policy</b> (50% under 4 hr; 100% no-show).
+      </div>
+    </div>
+  </section>
+
+  <!-- TIERS -->
+  <section id="tiers" class="block">
+    <div class="s-head">
+      <div class="ico"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16M15 4v16"/></svg></div>
+      <div><h2>Three Tiers</h2><div class="sub">Price · service · vibe</div></div>
+    </div>
+    <div class="crumb">A city of hundreds — sorted</div>
+
+    <div class="tiers">
+      <div class="tier lux">
+        <div class="tier-head">
+          <div class="tier-name">Luxury &amp; <em>Resort</em></div>
+          <div class="tier-price">฿1,500+<small>~$45+ / hr</small></div>
+        </div>
+        <p class="tier-desc"><b>Teak mansion estates</b>, private garden pavilions, multi-hour holistic rituals, and hotel pick-up.</p>
+        <div class="tier-best"><b>Best for</b> · special occasions and complete sensory escape.</div>
+      </div>
+
+      <div class="tier mid">
+        <div class="tier-head">
+          <div class="tier-name">Mid-Range <em>Day Spa</em></div>
+          <div class="tier-price">฿600–900<small>~$18–28 / hr</small></div>
+        </div>
+        <p class="tier-desc"><b>Private treatment rooms</b>, en-suite showers, tranquil courtyards, and complimentary herbal tea.</p>
+        <div class="tier-best"><b>Best for</b> · reliable hygiene and quiet, professional environments.</div>
+      </div>
+
+      <div class="tier hood">
+        <div class="tier-head">
+          <div class="tier-name">Neighborhood <em>Shop</em></div>
+          <div class="tier-price">฿200–350<small>~$6–11 / hr</small></div>
+        </div>
+        <p class="tier-desc">Clean, open-fronted rooms with reclining chairs, curtained mats, and <b>highly skilled therapists</b>.</p>
+        <div class="tier-best"><b>Best for</b> · quick relief (like foot rubs) after a long day of walking.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LUXURY -->
+  <section id="luxury" class="block">
+    <div class="s-head">
+      <div class="ico"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 6.9H22l-5.8 4.3 2.2 7L12 16l-6.4 4.2 2.2-7L2 9.9h7.6z"/></svg></div>
+      <div><h2>Luxury &amp; Boutique</h2><div class="sub">Premium retreats</div></div>
+    </div>
+    <div class="crumb">Historic mansions · quiet gardens</div>
+    <p class="lede">Ideal for couples seeking <b>complete quiet</b>, exceptional service, and resort-grade amenities.</p>
+
+    <div class="spa gold">
+      <div class="spa-head">
+        <div class="spa-name">Oasis Spa <em>· Lanna</em></div>
+        <span class="spa-tag gold">Boutique</span>
+      </div>
+      <div class="loc"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg>4 Samlarn Rd · Old City, beside Wat Phra Singh</div>
+      <p class="spa-desc">Elegant garden pavilions from one of Thailand's most lauded day-spa groups. Their <b>Four-Hand signature massage</b> is the reason people book — resort-grade luxury without the resort.</p>
+    </div>
+
+    <div class="spa gold">
+      <div class="spa-head">
+        <div class="spa-name">Makkha <em>Health &amp; Spa</em></div>
+        <span class="spa-tag gold">Colonial garden</span>
+      </div>
+      <div class="loc"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg>4 Soi Sam Lan 2 · Old City</div>
+      <p class="spa-desc">A light-filled colonial mansion surrounded by peaceful leafy gardens. <b>Herbal-compress mastery</b> — the pick for stiff shoulders after a long flight or day hike.</p>
+    </div>
+
+    <div class="spa gold">
+      <div class="spa-head">
+        <div class="spa-name">Zira <em>Spa</em></div>
+        <span class="spa-tag gold">Gold Lanna</span>
+      </div>
+      <div class="loc"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg>8, 1 Ratvithi Rd · Old City</div>
+      <p class="spa-desc">Grand, highly polished — <span class="accent">golden Lanna-style interiors</span> and exceptionally luxurious treatment suites. Premium multi-treatment signature packages that draw top international scores.</p>
+    </div>
+
+    <div class="spa gold">
+      <div class="spa-head">
+        <div class="spa-name">Cheeva <em>Spa</em></div>
+        <span class="spa-tag gold">Villa</span>
+      </div>
+      <div class="loc"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg>4/2 Husadisawee Rd · just N of Old City</div>
+      <p class="spa-desc">A tranquil, beautifully appointed villa surrounded by <b>calming water features</b>. Authentic Lanna therapeutic packages in complete, serene privacy.</p>
+    </div>
+  </section>
+
+  <!-- MID-RANGE -->
+  <section id="mid" class="block">
+    <div class="s-head">
+      <div class="ico"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-2 4-6 5-6 10a6 6 0 0 0 12 0c0-5-4-6-6-10z"/></svg></div>
+      <div><h2>Mid-Range Day Spas</h2><div class="sub">Serene value</div></div>
+    </div>
+    <div class="crumb">Private rooms · honest prices</div>
+
+    <div class="spa">
+      <div class="spa-head">
+        <div class="spa-name">Fah Lanna <em>Spa</em></div>
+        <span class="spa-tag">Garden oasis</span>
+      </div>
+      <div class="loc"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg>57, 57/1 Wiang Kaew Rd · Old City</div>
+      <p class="spa-desc">A renowned <span class="accent">garden oasis</span> tucked inside the Old City — teakwood walkways over koi ponds, lush greenery, deeply meditative. Traditional <b>Lanna rituals</b>, herbal steam baths, holistic packages.</p>
+      <div class="spa-note">
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 2 7v7c0 5 4 8 10 8s10-3 10-8V7z" opacity=".25"/><path d="M11 16V9l-3 2v-1l4-3 4 3v1l-3-2v7z"/></svg>
+        <span><b>Complimentary tuk-tuk pick-up</b> from central hotels (including the InterContinental Mae Ping) for bookings of <b>90 minutes or more</b>.</span>
+      </div>
+    </div>
+
+    <div class="spa">
+      <div class="spa-head">
+        <div class="spa-name">Calm <em>Massage &amp; Spa</em></div>
+        <span class="spa-tag">Minimalist</span>
+      </div>
+      <div class="loc"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg>18, 3 Khang Ruan Jum Rd · Old City (Inthawarorot)</div>
+      <p class="spa-desc">True to its name — <b>minimalist, clean, beautifully quiet</b> treatment rooms. Steady, highly trained hands and firm, therapeutic muscle release in a distraction-free environment.</p>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOOD -->
+  <section id="hood" class="block">
+    <div class="s-head">
+      <div class="ico"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+      <div><h2>Neighborhood &amp; Social</h2><div class="sub">Walk-in friendly · social mission</div></div>
+    </div>
+    <div class="crumb">World-class skill · honest prices</div>
+
+    <div class="spa blush">
+      <div class="spa-head">
+        <div class="spa-name">Lila Thai <em>&amp; Women's Massage Center</em></div>
+        <span class="spa-tag blush">Social enterprise</span>
+      </div>
+      <div class="loc"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg>Ratchadamnoen Rd &amp; Wiang Kaew Rd · multiple branches</div>
+      <p class="spa-desc">Both are <span class="accent">celebrated social enterprises</span> — founded by a former prison director to employ and empower newly released, rigorously trained female therapists.</p>
+      <p class="spa-desc"><b>Exceptional</b>, firm traditional Thai massages and foot rubs at incredibly honest prices.</p>
+    </div>
+
+    <div class="spa blush">
+      <div class="spa-head">
+        <div class="spa-name">Ziri <em>Massage &amp; Spa</em></div>
+        <span class="spa-tag blush">Sanctuary</span>
+      </div>
+      <div class="loc"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg>99/3 Ratchapakhinai Rd · Si Phum</div>
+      <p class="spa-desc">A small, spotless, incredibly well-run neighborhood sanctuary. A <b>highly reliable</b> upgrade — near-perfect scores for quiet rooms, warm service, and professional therapists.</p>
+    </div>
+
+    <div class="spa blush">
+      <div class="spa-head">
+        <div class="spa-name">Antique <em>Massage</em></div>
+        <span class="spa-tag blush">Teak house</span>
+      </div>
+      <div class="loc"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg>14 Nantaram Rd · Hai Ya, south of the Old City</div>
+      <p class="spa-desc">Housed in a beautiful <b>historic teakwood house</b>. High-quality traditional massage infused with authentic Lanna-era charm and atmosphere.</p>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section id="treatments" class="block">
+    <div class="s-head">
+      <div class="ico"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12c0-4 3-7 8-7s8 3 8 7"/><path d="M2 15h20"/><path d="M6 15v2a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-2"/></svg></div>
+      <div><h2>Signature Lanna Treatments</h2><div class="sub">On the menu · worth trying</div></div>
+    </div>
+    <div class="crumb">Northern therapeutic heritage</div>
+
+    <div class="treat">
+      <div class="treat-head">
+        <div class="treat-name">Traditional Thai <em>Massage</em></div>
+        <span class="treat-thai">Nuad Thai</span>
+      </div>
+      <p class="treat-desc"><b>Fully clothed, oil-free.</b> Deep pressing, acupressure, and passive yoga-like stretching. Highly restorative for flexibility.</p>
+    </div>
+
+    <div class="treat">
+      <div class="treat-head">
+        <div class="treat-name">Herbal <em>Compress</em></div>
+        <span class="treat-thai">Luk Pra Kob</span>
+      </div>
+      <p class="treat-desc">A muslin ball packed with <b>steamed kaffir lime, turmeric, lemongrass, and camphor</b> is pressed warm along the body's energy lines. Deeply relaxes sore muscles; improves circulation.</p>
+    </div>
+
+    <div class="treat">
+      <div class="treat-head">
+        <div class="treat-name">Tok Sen <em>Massage</em></div>
+        <span class="treat-thai">Lanna specialty</span>
+      </div>
+      <p class="treat-desc">A rare Lanna specialty — a therapist uses a small <b>wooden mallet and wedge</b> to gently tap along the body's <em>sen</em> energy lines. Rhythmic acoustic vibrations travel deep into muscle to release stubborn tension. <b>Try it here</b> — rarely performed well outside Northern Thailand.</p>
+    </div>
+  </section>
+
+  <!-- ETIQUETTE -->
+  <section id="etiquette" class="block">
+    <div class="s-head">
+      <div class="ico"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div><h2>Etiquette &amp; Tips</h2><div class="sub">Small courtesies · big comfort</div></div>
+    </div>
+    <div class="crumb">Booking · pressure · shoes · tips</div>
+
+    <div class="etiquette">
+      <h4><span class="d"></span>Six practical notes</h4>
+      <ul>
+        <li>
+          <span class="ic"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16v13H4zM8 3v4M16 3v4M4 11h16"/></svg></span>
+          <span><b>Book ahead for premium spots.</b> Fah Lanna, Zira, Oasis, and the ii Spa book out <b>1–2 days ahead</b> — especially evenings. Facebook or WhatsApp works fast.</span>
+        </li>
+        <li>
+          <span class="ic"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12c2-4 6-4 8 0s6 4 8 0"/></svg></span>
+          <span><b>Speak up on pressure.</b> If it's too intense, say <em>Bao bao</em> (&ldquo;gently&rdquo;). Therapists adjust immediately; they prefer knowing.</span>
+        </li>
+        <li>
+          <span class="ic"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3h8l-1 6H9z"/><path d="M9 9v11h6V9"/></svg></span>
+          <span><b>Dress is provided.</b> Thai and herbal-compress sessions get loose pajama-style clothes. Oil massages: private room, sarong or towel, disposable undergarments.</span>
+        </li>
+        <li>
+          <span class="ic"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l3-6 5-2 5 2 3 6"/><path d="M4 20h16"/></svg></span>
+          <span><b>Shoes off at the door</b> — strict cultural rule. Bring slip-ons or sandals for a day of spa-hopping.</span>
+        </li>
+        <li>
+          <span class="ic"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 21h20z"/><path d="M12 10v4M12 17h.01"/></svg></span>
+          <span><b>Avoid the neon parlors.</b> Bright lights, staff calling from doorways late at night — not therapeutic. The venues above are the safe list.</span>
+        </li>
+        <li>
+          <span class="ic"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M8 7h6a3 3 0 1 1 0 6H8m0 0h6a3 3 0 1 1 0 6H8"/></svg></span>
+          <span><b>Tipping.</b> Appreciated, not required. <em>฿50–100 / hr</em> at neighborhood shops, <em>฿100–200 / hr</em> at high-end spas — hand cash directly to your therapist.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="b">Chiang Mai · September 2026</div>
+    Rest between the temples, hikes, and markets.<br>
+    Bao bao — gently.
+  </footer>
+
+</div>
+</body>
+</html>
